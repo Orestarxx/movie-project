@@ -4,8 +4,10 @@ import Link from "next/link";
 const Menu = () => {
     return (
         <div>
-            <Link href={'/movies'}></Link>
-            <Link href={'/tvseries'}></Link>
+            <Link href={{
+                pathname:'/movies'
+            }}>Movies</Link>
+            <Link href={'/tvseries'}>TV Series</Link>
         </div>
     );
 };
