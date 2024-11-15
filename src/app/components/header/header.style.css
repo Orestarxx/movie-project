@@ -13,7 +13,19 @@
 }
 #navHolder{
     width:350px;
-    margin-left: 20px;
+    height: 100%;
+    margin-left: 30px;
     display: flex;
     gap: 15px;
+    align-items: center;
+}
+#navHolder>a{
+    text-decoration: none;
+    color: black;
+}
+#navHolder>a:hover{
+    border-bottom: 2px solid;
+}
+#userAccHolder{
+    margin-right: 30px;
 }

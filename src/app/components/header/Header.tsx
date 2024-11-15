@@ -8,9 +8,9 @@ const Header = () => {
         <div id={'headerHolder'}>
             <header>
                 <div id={"navHolder"}>
-                    <Link href={'/nowPlaying'}>Now Playing</Link>
+                    <Link href={'/now_laying'}>Now Playing</Link>
                     <Link href={'/popular'}>Popular</Link>
-                    <Link href={'/topRated'}>Top Rated</Link>
+                    <Link href={'/top_rated'}>Top Rated</Link>
                     <Link href={'/upcoming'}>Upcoming</Link>
                 </div>
                 <div id={'searchFormHolder'}>
