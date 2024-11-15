@@ -3,8 +3,8 @@ import React, {FC} from "react";
 import {useSearchParams, usePathname, useRouter} from "next/navigation";
 
 type PaginationControlsProps = {
-    next:boolean,
-    previous:boolean
+    next:boolean|undefined,
+    previous:boolean|undefined
 }
 
 export const Pagination:FC<PaginationControlsProps> = ({next,previous}) =>{
@@ -27,8 +27,8 @@ export const Pagination:FC<PaginationControlsProps> = ({next,previous}) =>{
     }
     return (
         <div>
-            <button onClick={previousPage}>next</button>
-            <button onClick={nextPage}>prev</button>
+            <button onClick={previousPage} disabled={previous}>prev</button>
+            <button onClick={nextPage} disabled={next}>next</button>
         </div>
     )
 

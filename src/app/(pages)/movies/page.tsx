@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string|string[]|undefined}>
-type MovieProps = {
-    searchParams:SearchParams
+import {movieService} from "@/app/services/movie.service";
+type SearchParams = Promise<{[key:string]:string}>
+type ParamsProps = {
+    searchParams: SearchParams
 }
 
-const MoviesPage = async ({searchParams}:{searchParams:MovieProps}) => {
-    const page = await searchParams?? 1;
-    console.log(page);
+const MoviesPage:FC<ParamsProps> = async ({searchParams}) => {
+    const page =  await searchParams?? 1;
+    const movies = await movieService.movies.getAllMovies(page?.page?.toString())
+    console.log(movies);
     return (
         <div>
-            movies
-            <Pagination next={false} previous={true}/>
+            {movies.results.map((movie) =><div key={movie.id}>{movie.original_title}</div>)}
+            <Pagination next={movies?.next} previous={movies?.previous}/>
         </div>
     );
 };
