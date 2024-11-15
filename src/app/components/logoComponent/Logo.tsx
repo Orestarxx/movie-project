@@ -1,10 +1,10 @@
 import React from 'react';
 
+
 const Logo = () => {
     return (
-        <div>
-            logo
-        </div>
+
+            <img src="./logoIcon/Universal-Pictures.png" alt="logo"/>
     );
 };
 
