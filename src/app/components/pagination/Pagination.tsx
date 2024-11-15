@@ -1,37 +1,35 @@
 'use client'
-import React from "react";
-import {useSearchParams ,usePathname} from "next/navigation";
+import React, {FC} from "react";
+import {useSearchParams, usePathname, useRouter} from "next/navigation";
 
-export default function Pagination () {
-   const params = useSearchParams();
-    console.log(params);
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-       let currentPage = Number(searchParams.get('page')) || 1;
-    console.log(searchParams.get('page'));
+type PaginationControlsProps = {
+    next:boolean,
+    previous:boolean
+}
+
+export const Pagination:FC<PaginationControlsProps> = ({next,previous}) =>{
+    const params = useSearchParams();
+    const router = useRouter()
+    const page = params.get('page')?? 1;
+    const pathName = usePathname()
+    console.log(pathName);
+
 
     const nextPage = () =>{
-        // const params = new URLSearchParams(searchParams);
-        // // const page = ++ currentPage ;
-        // console.log(page);
-        // console.log(params);
-        // params.set('page', page.toString());
-
-        // return `${pathname}?${page.toString()}`;
-
-   }
-   const previousPage = () =>{
-       const params = new URLSearchParams(searchParams);
-       currentPage --
-       params.set('page', currentPage.toString());
-       console.log(params.get('page'));
-       return `${pathname}?${params.toString()}`
-   }
+           let newPage= +page;
+           newPage++
+        router.push(`${pathName}/?page=${newPage}` )
+    }
+    const previousPage = () =>{
+        let newPage= +page;
+        newPage--
+        router.push(`${pathName}/?page=${newPage}` )
+    }
     return (
-    <div>
-        <button onClick={nextPage}>prev</button>
-        <button onClick={previousPage}>next</button>
-    </div>
-)
+        <div>
+            <button onClick={previousPage}>next</button>
+            <button onClick={nextPage}>prev</button>
+        </div>
+    )
 
 }

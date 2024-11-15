@@ -5,7 +5,8 @@ const Menu = () => {
     return (
         <div>
             <Link href={{
-                pathname:'/movies'
+                pathname:'/movies',
+                query:{page:1}
             }}>Movies</Link>
             <Link href={'/tvseries'}>TV Series</Link>
         </div>
