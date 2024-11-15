@@ -1,0 +1,19 @@
+#headerHolder{
+    width: 100%;
+    height: 70px;
+}
+#headerHolder>header{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+#navHolder{
+    width:350px;
+    margin-left: 20px;
+    display: flex;
+    gap: 15px;
+}
