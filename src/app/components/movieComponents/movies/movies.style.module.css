@@ -1,0 +1,20 @@
+#moviesHolder{
+    width: 100%;
+    height: 100%;
+}
+#moviesAndGenresHolder{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+#genreHolder{
+    width: 15%;
+}
+#movies{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

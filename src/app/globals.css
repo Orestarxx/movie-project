@@ -11,7 +11,7 @@ body{
 #wrap{
     width: 94vw;
     margin: 2vh 4vw 2vh 2vw;
-    height: 150vh;
+    min-height: 150vh;
     border: 1px solid;
     border-radius: 20px;
 }
@@ -32,4 +32,6 @@ body{
     width: 90%;
     height: 100%;
     border-top-right-radius: 20px;
+}
+main{
 }
