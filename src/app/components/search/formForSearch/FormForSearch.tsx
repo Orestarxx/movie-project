@@ -13,7 +13,7 @@ const FormForSearch = () => {
         if (term) {
             params.set('query', term);
         } else {
-            // params.delete('query');
+            params.delete('query');
         }
         replace(`${pathname}?${params.toString()}`);
     }

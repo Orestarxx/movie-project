@@ -3,6 +3,7 @@ import {headers} from "@/app/data/data";
 import {IData} from "@/app/models/IData";
 import {IMovie} from "@/app/models/IMovie";
 import {IGenreData} from "@/app/models/IGenre";
+import {dataBuilder} from "@/app/helpers/databuilder";
 
 export const movieService = {
     genres:{
@@ -23,14 +24,7 @@ export const movieService = {
               method:'GET',
               headers:headers,
           }).then(response =>response.json());
-          const changedMovies:IData & {results:IMovie[]} = {
-              ...movies,
-              next:false,
-              previous:false
-          }
-          changedMovies.next = changedMovies.total_pages === changedMovies.page? true:false;
-          changedMovies.previous = changedMovies.page === 1? true:false;
-          return changedMovies
+          return dataBuilder(movies)
         }
     },
     searchSection:{
