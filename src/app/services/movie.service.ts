@@ -32,5 +32,14 @@ export const movieService = {
           changedMovies.previous = changedMovies.page === 1? true:false;
           return changedMovies
         }
+    },
+    searchSection:{
+        searchMovie: async (string:string,page:string):Promise<IData & {results:IMovie[]}> =>{
+            const searchMovie:IData & {results:IMovie[]} = await fetch(`${baseURL+endPoints.search+string}&page=${page}`,{
+                method:'GET',
+                headers:headers
+            }).then(response =>response.json())
+            return searchMovie
+        }
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './header.style.css'
 import UserAccount from "@/app/components/userAcc/UserAccount";
 import Link from "next/link";
-
+import FormForSearch from "@/app/components/search/formForSearch/FormForSearch";
 const Header = () => {
     return (
         <div id={'headerHolder'}>
@@ -14,10 +14,7 @@ const Header = () => {
                     <Link href={'/upcoming'}>Upcoming</Link>
                 </div>
                 <div id={'searchFormHolder'}>
-                    <form action="">
-                        <input type="text"/>
-                        <button>search</button>
-                    </form>
+                    <FormForSearch/>
                 </div>
                 <div id={'userAccHolder'}>
                     <UserAccount/>
