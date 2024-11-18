@@ -4,16 +4,17 @@ import {IData} from "@/app/models/IData";
 import {IMovie} from "@/app/models/IMovie";
 import {IGenreData} from "@/app/models/IGenre";
 import {dataBuilder} from "@/app/helpers/databuilder";
+import {IMovieByID} from "@/app/models/IMovieByID";
+import {IDataImages} from "@/app/models/IImage";
 
 export const movieService = {
     genres:{
         getGenres: async ():Promise<IGenreData> =>{
-            const genres:IGenreData = await fetch(baseURL+endPoints.genres,{
+            return await fetch(baseURL+endPoints.genres,{
                 method:'GET',
                 headers:headers,
                 cache:'force-cache'
             }).then(response => response.json())
-            return genres
 
         },
     },
@@ -24,7 +25,29 @@ export const movieService = {
               method:'GET',
               headers:headers,
           }).then(response =>response.json());
-          return dataBuilder(movies)
+          return dataBuilder<IMovie[]>(movies)
+        },
+    },
+    SingleMovie:{
+        getMovieById: async (id:string):Promise<IMovieByID> =>{
+            return (await fetch(baseURL+endPoints.getMovieByID+id,{
+                method:"GET",
+                headers:headers
+            }).then(response => response.json()))
+        },
+        getImagesOfMovie:async (id:string):Promise<IDataImages> =>{
+            return (await fetch(baseURL+endPoints.getMovieByID+id+endPoints.images,{
+                method:'GET',
+                headers:headers
+            })
+                .then(response => response.json()))
+        },
+        getVideosOfMovie: async (id:string) =>{
+             return (await fetch(baseURL+endPoints.getMovieByID+id+endPoints.videos,{
+                 method:'GET',
+                 headers:headers
+             })
+                 .then(response =>response.json()))
         }
     },
     searchSection:{
@@ -33,7 +56,7 @@ export const movieService = {
                 method:'GET',
                 headers:headers
             }).then(response =>response.json())
-            return searchMovie
+            return dataBuilder<IMovie[]>(searchMovie)
         }
     }
 }

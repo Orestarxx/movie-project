@@ -1,8 +1,9 @@
 import {movieService} from "@/app/services/movie.service";
 import {IMovie} from "@/app/models/IMovie";
-import Movie from "@/app/components/movieComponents/movie/Movie";
+import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/Movie";
 import {Pagination} from "@/app/components/pagination/Pagination";
 import React, {FC} from "react";
+import styles from './searchMoviesStyle.module.css'
 
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsProps = {
@@ -16,8 +17,10 @@ const SearchMovies:FC<ParamsProps> =  async ({searchParams}) => {
     console.log(foundMovies);
     return (
         <div>
-            {foundMovies.results?.map((movie:IMovie) =><Movie movie={movie} key={movie.id}/>)}
-            <Pagination next={false} previous={false}/>
+           <div id={styles.searchMoviesHolder}>
+               {foundMovies.results?.map((movie:IMovie) =><Movie movie={movie} key={movie.id}/>)}
+           </div>
+            <Pagination next={foundMovies.next} previous={foundMovies.previous}/>
         </div>
     );
 

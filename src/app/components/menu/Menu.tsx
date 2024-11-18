@@ -8,7 +8,10 @@ const Menu = () => {
                 pathname:'/movies',
                 query:{page:1}
             }}>Movies</Link>
-            <Link href={'/tvseries'}>TV Series</Link>
+            <Link href={{
+                pathname:'/tvseries',
+                query:{page:1}
+            }}>TV Series</Link>
         </div>
     );
 };

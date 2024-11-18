@@ -14,7 +14,17 @@ const Movie:FC<MovieProps> = ({movie}) => {
                     <span><img src={imgBaseURL + movie.poster_path} alt=""/></span>
                 </div>
                 <div className={styles.second}>
-                    <span>{movie.id}</span>
+                    <span>
+                        <img src={imgBaseURL + movie.poster_path} alt=""/>
+                        <div>
+                            <div className={styles.title}>{movie.title}</div>
+                            <div className={styles.description}><p>{movie.overview}</p></div>
+                            <div className={styles.releaseAndRating}>
+                                <div>{movie.popularity}</div>
+                                <div>{movie.release_date}</div>
+                            </div>
+                        </div>
+                    </span>
                 </div>
 
 

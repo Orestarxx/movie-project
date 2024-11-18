@@ -1,17 +1,14 @@
 import React from 'react';
 import './header.style.css'
 import UserAccount from "@/app/components/userAcc/UserAccount";
-import Link from "next/link";
 import FormForSearch from "@/app/components/search/formForSearch/FormForSearch";
+import HeaderTvAndMovieChanger from "@/app/components/header/headerListMoviesAndTVChanger/HeaderTVAndMovieChanger";
 const Header = () => {
     return (
         <div id={'headerHolder'}>
             <header>
                 <div id={"navHolder"}>
-                    <Link href={'/nowPlaying'}>Now Playing</Link>
-                    <Link href={'/popular'}>Popular</Link>
-                    <Link href={'/top_rated'}>Top Rated</Link>
-                    <Link href={'/upcoming'}>Upcoming</Link>
+                   <HeaderTvAndMovieChanger/>
                 </div>
                 <div id={'searchFormHolder'}>
                     <FormForSearch/>

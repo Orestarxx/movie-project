@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import styles from './movies.style.module.css'
 import {movieService} from "@/app/services/movie.service";
-import Movie from "@/app/components/movieComponents/movie/Movie";
+import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/Movie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-import Genres from "@/app/components/genresComponent/genres/Genres";
+import Genres from "@/app/components/genresComponents/movieGenresComponent/genres/Genres";
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsProps = {
     searchParams: SearchParams

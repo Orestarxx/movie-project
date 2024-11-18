@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import Movies from "@/app/components/movieComponents/movies/Movies";
+import Movies from "@/app/components/moviesAndTVcomponents/movieComponents/movies/Movies";
 import styles from './moviesPage.style.module.css'
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsProps = {

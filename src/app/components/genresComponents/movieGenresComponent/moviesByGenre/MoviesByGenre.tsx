@@ -2,9 +2,9 @@ import React, {FC} from 'react';
 import {Pagination} from "@/app/components/pagination/Pagination";
 import {movieService} from "@/app/services/movie.service";
 import {query} from "@/app/urls/urls";
-import Genres from "@/app/components/genresComponent/genres/Genres";
-import styles from "@/app/components/movieComponents/movies/movies.style.module.css";
-import Movie from "@/app/components/movieComponents/movie/Movie";
+import Genres from "@/app/components/genresComponents/movieGenresComponent/genres/Genres";
+import styles from "@/app/components/moviesAndTVcomponents/movieComponents/movies/movies.style.module.css";
+import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/Movie";
 import {IMovie} from "@/app/models/IMovie";
 
 

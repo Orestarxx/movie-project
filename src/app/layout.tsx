@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import React from "react";
-import Header from "@/app/components/header/Header";
+import Header from "@/app/components/header/headerComponent/Header";
 import Menu from "@/app/components/menu/Menu";
 import Footer from "@/app/components/footer/Footer";
 import Logo from "@/app/components/logoComponent/Logo";

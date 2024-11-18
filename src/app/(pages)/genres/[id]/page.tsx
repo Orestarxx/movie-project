@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import MoviesByGenre from "@/app/components/genresComponent/moviesByGenre/MoviesByGenre";
+import MoviesByGenre from "@/app/components/genresComponents/movieGenresComponent/moviesByGenre/MoviesByGenre";
 type SearchParams = Promise<{[key:string]:string}>
 type Params = Promise<{id:string}>
 type ParamsProps = {

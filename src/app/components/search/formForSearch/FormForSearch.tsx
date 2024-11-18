@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
-import Link from "next/link";
 
 const FormForSearch = () => {
     const searchParams = useSearchParams();
@@ -18,12 +17,12 @@ const FormForSearch = () => {
         replace(`${pathname}?${params.toString()}`);
     }
     return (
-        <Link href={
-            {
-                pathname:'/search',
-                query:{page:1}
-            }
-        }>
+        // <Link href={
+        //     {
+        //         pathname:'/search',
+        //         query:{page:1}
+        //     }
+        // }>
             <div className="relative flex flex-1 flex-shrink-0">
                 <label htmlFor="search" className="sr-only">
                     Search
@@ -39,7 +38,7 @@ const FormForSearch = () => {
                 />
 
             </div>
-        </Link>
+        // </Link>
     );
 };
 

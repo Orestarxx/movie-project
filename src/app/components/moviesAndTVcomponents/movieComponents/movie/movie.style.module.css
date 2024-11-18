@@ -1,0 +1,101 @@
+.card {
+    width: 150px;
+    height: 230px;
+    transition: all 0.7s;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 10px 15px 0 15px;
+}
+
+.card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1);
+
+}
+
+.first {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+}
+
+.card:hover .first {
+    height: 0px;
+    opacity: 0;
+}
+
+.second {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+}
+
+.card:hover .second {
+    opacity: 1;
+    height: 100%;
+    font-size: 1.8rem;
+    transform: rotate(0deg);
+}
+.first>span, .first>span>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+/*second span inside info*/
+.second>span>{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.second>span>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    filter: blur(3px);
+    position: relative;
+}
+.second>span>div{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    color: #ffffff;
+    font-size: 13px;
+}
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+}
+.description{
+    width: 100%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    overflow: hidden;
+}
+.releaseAndRating{
+    width: 100%;
+    height: 15%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

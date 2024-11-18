@@ -1,8 +1,9 @@
 import {IData} from "@/app/models/IData";
-import {IMovie} from "@/app/models/IMovie";
 
-export const dataBuilder = (data:IData & {results:IMovie[]}) =>{
-    const newData:IData & {results:IMovie[]} = {
+
+
+export const dataBuilder = <T,> (data:IData & {results:T}) =>{
+    const newData:IData & {results:T} = {
         ...data,
         next:false,
         previous:false

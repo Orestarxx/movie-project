@@ -1,9 +1,14 @@
 import React from 'react';
+import MovieDetails from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/MovieDetails";
+import styles from './detailsMovie.style.module.css'
 
-const DetailsMoviePage = () => {
+type Params ={id:string}
+
+const DetailsMoviePage = ({params}:{params:Params}) => {
+
     return (
-        <div>
-            detailsMovie
+        <div id={styles.detailsPage}>
+            <MovieDetails params={params}/>
         </div>
     );
 };
