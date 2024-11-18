@@ -6,6 +6,8 @@ import VideoSlider
     from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoSliderForDetailsMovie/VideoSlider";
 import {IVideoData} from "@/app/models/IVideoMovie";
 import StarRatings from "@/app/components/starRatings/StarRatings";
+import {IGenres, IProduction_companies, ISpoken_languages} from "@/app/models/IMovieByID";
+import Link from "next/link";
 
 
 type Params = Promise<{id:string}>
@@ -27,15 +29,71 @@ const MovieDetails = async ({params}:{params:Params}) => {
                              <img src={imgBaseURL + images?.posters[3]?.file_path} alt=""/>
                              <div id={styles.starsHolder}>
                                    <StarRatings rating={movieByID.vote_average}/>
-                                 <div id={styles.ratingCircle}></div>
+                                 <div id={styles.ratingCircle}>{movieByID.vote_average}</div>
+                                 <div id={styles.release}>{movieByID.release_date}</div>
                              </div>
                          </div>
-                         <div id={styles.overview}>
-                             <p>{movieByID.overview}</p>
+                         <div id={styles.overviewHolder}>
+                             {/*overview*/}
+                             <div id={styles.overview}>
+                                 <p>{movieByID.overview}</p>
+                             </div>
+                             {/*companies*/}
+                             <div id={styles.holderOfCompanies}>
+                                 <div><h2>Production Companies</h2></div>
+                                <div className={styles.mainCircleAndNameHolder}>
+                                    {movieByID.production_companies.map(
+                                        (company:IProduction_companies) =><div key={company.id} className={styles.circleAndNameHolder}>
+                                            <div className={styles.circleLogo}>
+                                                <img src={imgBaseURL+company.logo_path} alt="logo"/>
+                                            </div>
+                                            <p className={styles.companyName}>{company.name}</p>
+                                        </div>)}
+                                </div>
+                             </div>
+                             {/*genres*/}
+                             <div id={styles.genresHolder}>
+                                 <div id={styles.genreName}><h2>Genres</h2></div>
+                                 <div id={styles.genreHolder}>
+                                     {movieByID.genres.map((genre:IGenres,index:number) =><div key={index} className={styles.genre}>
+                                         <Link href={{
+                                             pathname:'/genres/'+genre.id,
+                                             query:{page:1}
+                                         }}>{genre.name}</Link>
+                                     </div>)}
+                                 </div>
+                             </div>
+                             {/*languages*/}
+                             <div id={styles.languageHolder}>
+                                 <div>
+                                     <h2>Spoken Language</h2>
+                                 </div>
+                                 <div id={styles.languagesHolder}>
+                                     {movieByID.spoken_languages.map((lang:ISpoken_languages,index) =><div key={index}>
+                                         {lang.name}
+                                     </div>)}
+                                 </div>
+                             </div>
+                             {/*revenue*/}
+                             <div id={styles.revenueHolder}>
+                                 <div><h2>Revenue</h2></div>
+                                 <div>{movieByID.revenue}$</div>
+                             </div>
+                             {/*runtime*/}
+                             <div id={styles.runTime}>
+                                 <div><h2>Run Time</h2></div>
+                                  <div>{`${movieByID.runtime} min`}</div>
+                             </div>
+                             <div>
+                                 <div id={styles.tagLine}>#{movieByID.tagline}</div>
+                             </div>
                          </div>
                      </div>
-                     <div>
-                         <VideoSlider videos={videos}/>
+                     <div id={styles.imagesHolder}></div>
+                     <div id={styles.videoHolder}>
+                         <div id={styles.videoWrapper}>
+                             <VideoSlider videos={videos}/>
+                         </div>
                      </div>
                  </div>
              </div>

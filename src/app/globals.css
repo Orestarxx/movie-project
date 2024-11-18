@@ -12,14 +12,15 @@ body{
 #wrap{
     width: 94vw;
     margin: 2vh 4vw 2vh 2vw;
-    min-height: 150vh;
+    height: 250vh;
     border: 1px solid;
     border-radius: 20px;
     background-color: white;
+    position: relative;
 }
 #infoHolder{
     width: 100%;
-    height: 90%;
+    height: 80%;
 
     display: flex;
     border-top-left-radius: 20px;
@@ -27,15 +28,15 @@ body{
 }
 #menuHolder{
     width: 10%;
-    height: 800px;
+    height: 88%;
     border-right: 1px solid grey;
 }
 #mainAndHeaderHolder{
     width: 90%;
-    height: 100%;
+    height: 92%;
     border-top-right-radius: 20px;
 }
 #mainAndHeaderHolder>main{
     width: 100%;
-    height: 100%;
+    height: 95%;
 }

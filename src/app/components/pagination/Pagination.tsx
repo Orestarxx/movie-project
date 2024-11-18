@@ -1,7 +1,7 @@
 'use client'
 import React, {FC} from "react";
 import {useSearchParams, usePathname, useRouter} from "next/navigation";
-import './pagination.style.css'
+import  './pagination.style.css'
 
 type PaginationControlsProps = {
     next:boolean|undefined,
@@ -44,9 +44,9 @@ export const Pagination:FC<PaginationControlsProps> = ({next,previous}) =>{
 
 
     return (
-        <div>
-            <button onClick={previousPage} disabled={previous} className={"button type1"}>prev</button>
-            <button onClick={nextPage} disabled={next} className={"button type1"} >next</button>
+        <div id={"buttonsHolder"}>
+            <button onClick={previousPage} disabled={previous} className={previous === true?'buttonTrue':"buttonFalse"} >prev</button>
+            <button onClick={nextPage} disabled={next} className={next === true?'buttonTrue': "buttonFalse"} >next</button>
         </div>
     )
 

@@ -1,0 +1,112 @@
+#buttonsHolder{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttonFalse{
+    width: 400px;
+    height: 50px;
+    border: 1px solid;
+}
+.buttonFalse {
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonFalse::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.buttonFalse::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+}
+
+.buttonFalse:hover::before {
+    transform: scale(0)
+}
+.buttonFalse:hover::after{
+    transform: scale(0)
+}
+
+.buttonFalse:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+}
+/*if button true*/
+.buttonTrue{
+    width: 400px;
+    height: 50px;
+    border: 1px solid;
+}
+.buttonTrue {
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge red;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonTrue::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.buttonTrue::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+}
+
+.buttonTrue:hover::before {
+    transform: scale(0)
+}
+.buttonTrue:hover::after{
+    transform: scale(0)
+}
+
+.buttonTrue:hover {
+    box-shadow: inset 0px 0px 25px red;
+}

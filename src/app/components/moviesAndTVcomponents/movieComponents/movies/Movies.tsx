@@ -20,7 +20,8 @@ const Movies:FC<ParamsProps> = async ({searchParams}) => {
                 </div>
                 <div id={styles.movies}>{movies.results?.map((movie) => <Movie key={movie.id} movie={movie}/>)}</div>
             </div>
-            <Pagination next={movies?.next} previous={movies?.previous} pageData={movies?.page}/>
+                <div id={styles.paginationHolder}><Pagination next={movies?.next} previous={movies?.previous} pageData={movies?.page}/></div>
+
         </div>
     );
 };

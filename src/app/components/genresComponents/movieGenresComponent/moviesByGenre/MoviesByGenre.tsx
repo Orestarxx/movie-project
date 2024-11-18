@@ -25,7 +25,7 @@ const MoviesByGenre:FC<ParamsProps> = async ({searchParams,params}) => {
                 <div id={styles.genreHolder}>
                     <Genres/>
                 </div>
-                <div id={styles.movies}>{moviesByGenre.results.map((byGenre:IMovie) =><Movie movie={byGenre} key={byGenre.id}/>)}</div>
+                <div id={styles.movies}>{moviesByGenre.results?.map((byGenre:IMovie) =><Movie movie={byGenre} key={byGenre.id}/>)}</div>
             </div>
             <Pagination next={moviesByGenre.next} previous={moviesByGenre.previous}/>
         </div>
