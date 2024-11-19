@@ -52,7 +52,7 @@ export const movieService = {
     },
     searchSection:{
         searchMovie: async (string:string,page:string):Promise<IData & {results:IMovie[]}> =>{
-            const searchMovie:IData & {results:IMovie[]} = await fetch(`${baseURL+endPoints.search+string}&page=${page}`,{
+            const searchMovie:IData & {results:IMovie[]} = await fetch(`${baseURL+endPoints.searchMovie+string}&page=${page}`,{
                 method:'GET',
                 headers:headers
             }).then(response =>response.json())

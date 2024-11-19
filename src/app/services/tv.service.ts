@@ -5,6 +5,7 @@ import {IData} from "@/app/models/IData";
 import {ITelevision} from "@/app/models/ITelevision";
 import {dataBuilder} from "@/app/helpers/databuilder";
 
+
 export const tvService = {
     genres:{
         getTVGenres: async ():Promise<IGenreData> =>{
@@ -16,12 +17,15 @@ export const tvService = {
         }
     },
     tvSeries:{
-        getTV: async (page:string):Promise<IData & {results:ITelevision[]}> =>{
-            const tv:IData & {results:ITelevision[]} = await fetch(`${baseURL}${endPoints.tv}${query.page}${page}`,{
+        getTV: async (page:string,tvGenrePath?:string):Promise<IData & {results:ITelevision[]}> =>{
+            const tv:IData & {results:ITelevision[]} =
+                await fetch(`${baseURL}${endPoints.tv}${query.page}${page}${tvGenrePath}`,{
                 method:'GET',
                 headers:headers
             }).then(response => response.json())
-            return dataBuilder<ITelevision[]>(tv)
+
+
+            return  dataBuilder<ITelevision[]>(tv)
         }
     }
 }

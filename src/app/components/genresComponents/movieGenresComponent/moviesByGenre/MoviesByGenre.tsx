@@ -18,7 +18,6 @@ const MoviesByGenre:FC<ParamsProps> = async ({searchParams,params}) => {
     const page =  await searchParams?? 1;
     const {id} = await params;
     const moviesByGenre = await movieService.movies.getAllMovies(page?.page?.toString(),query.with_genres+id);
-    console.log(moviesByGenre);
     return (
         <div>
             <div id={styles.moviesAndGenresHolder}>

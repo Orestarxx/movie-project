@@ -15,7 +15,7 @@ const Movie:FC<MovieProps> = ({movie}) => {
                 </div>
                 <div className={styles.second}>
                     <span>
-                        <img src={imgBaseURL + movie.poster_path} alt=""/>
+                        <img src={movie.poster_path?imgBaseURL + movie.poster_path:imgBaseURL+movie.backdrop_path} alt=""/>
                         <div>
                             <div className={styles.title}>{movie.title}</div>
                             <div className={styles.description}><p>{movie.overview}</p></div>

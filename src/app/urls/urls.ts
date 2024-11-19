@@ -10,11 +10,12 @@ export const endPoints = {
     genres:'/genre/movie/list',
     tvGenres:'/genre/tv/list',
     //search
-    search:'/search/movie?query=',
+    searchMovie:'/search/movie?query=',
     //By id
     getMovieByID:'/movie/',
     images:'/images',
-    videos:'/videos'
+    videos:'/videos',
+    tvSearch:'/search/tv'
 }
 export const query = {
     page:'?page=',
