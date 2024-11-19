@@ -3,28 +3,40 @@
     height: 100%;
 }
 #moviesAndGenresHolder{
-    display: flex;
+    /*display: flex;*/
     width: 100%;
     height: 100%;
 }
 #genreHolder{
-    width: 16%;
-    border-right:1px solid ;
-    height: 80%;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    margin: 0 1% 0 1%;
+}
+#genreHolder>div{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 10px 10px 25px rgb(25, 25, 25),
+    -10px -10px 25px rgb(60, 60, 60);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+#genreHolder>div>div{
+    /*margin:15px 0 0 5px;*/
+    color: white;
+    font-size: 14px;
 }
 #movies{
-    width: 80%;
+    width: 100%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 5% 0 0 0;
-}
-#paginationHolder{
-    width: 80%;
-    height: 40%;
-    position: absolute;
-    right: 0;
-    bottom: -70px;
+    margin: 0 0 0 0;
 }

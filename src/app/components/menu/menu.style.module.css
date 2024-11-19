@@ -1,0 +1,21 @@
+#menuHolder{
+    width: 100%;
+    height: 600px;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: #149CEA;
+}
+#menuHolder>ul>li:first-child{
+    margin-bottom: 20px;
+}
+#menuHolder>ul{
+    margin-left: 10px;
+}
+.lists>li{
+    font-size: 14px;
+    margin-left: 40px;
+    margin-top: 10px;
+}

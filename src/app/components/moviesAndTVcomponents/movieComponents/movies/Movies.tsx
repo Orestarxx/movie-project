@@ -16,12 +16,11 @@ const Movies:FC<ParamsProps> = async ({searchParams}) => {
         <div id={styles.moviesHolder}>
             <div id={ styles.moviesAndGenresHolder}>
                 <div id={styles.genreHolder}>
-                    <Genres/>
+                   <Genres/>
                 </div>
                 <div id={styles.movies}>{movies.results?.map((movie) => <Movie key={movie.id} movie={movie}/>)}</div>
+                <Pagination next={movies?.next} previous={movies?.previous} pageData={movies?.page}/>
             </div>
-                <div id={styles.paginationHolder}><Pagination next={movies?.next} previous={movies?.previous} pageData={movies?.page}/></div>
-
         </div>
     );
 };

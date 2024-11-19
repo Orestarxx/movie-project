@@ -4,6 +4,7 @@ import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/
 import {Pagination} from "@/app/components/pagination/Pagination";
 import React, {FC} from "react";
 import styles from './searchMoviesStyle.module.css'
+import FormForSearch from "@/app/components/search/formForSearch/FormForSearch";
 
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsProps = {
@@ -17,6 +18,9 @@ const SearchMovies:FC<ParamsProps> =  async ({searchParams}) => {
     console.log(foundMovies);
     return (
         <div>
+            <div>
+                <FormForSearch/>
+            </div>
            <div id={styles.searchMoviesHolder}>
                {foundMovies.results?.map((movie:IMovie) =><Movie movie={movie} key={movie.id}/>)}
            </div>

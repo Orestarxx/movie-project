@@ -24,7 +24,7 @@ export default function RootLayout({
           <div id={'infoHolder'}>
               <div id={'menuHolder'}>
                  <div>
-                     <div>
+                     <div id={'logoHolder'}>
                          <Logo/>
                      </div>
                      <Menu/>

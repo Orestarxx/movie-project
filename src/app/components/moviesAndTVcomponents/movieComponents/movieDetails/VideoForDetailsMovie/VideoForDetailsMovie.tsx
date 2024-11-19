@@ -1,11 +1,11 @@
 'use client'
 import React, {FC} from 'react';
-import './videoSlider.style.module.css'
+import './videoForDetailsMovie.style.module.css'
 import {IVideoMovie} from "@/app/models/IVideoMovie";
 type VideoProps = {
     videos:{results:IVideoMovie[],id:number}
 }
-const VideoSlider:FC<VideoProps> = ({videos}) => {
+const VideoForDetailsMovie:FC<VideoProps> = ({videos}) => {
     console.log(videos);
 
     return (
@@ -16,4 +16,4 @@ const VideoSlider:FC<VideoProps> = ({videos}) => {
     );
 };
 
-export default VideoSlider;
+export default VideoForDetailsMovie;

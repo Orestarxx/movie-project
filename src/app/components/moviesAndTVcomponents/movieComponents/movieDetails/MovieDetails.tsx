@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './movieDetails.style.module.css'
 import {movieService} from "@/app/services/movie.service";
 import {imgBaseURL, imgOriginal} from "@/app/urls/urls";
-import VideoSlider
-    from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoSliderForDetailsMovie/VideoSlider";
+import VideoForDetailsMovie
+    from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoForDetailsMovie/VideoForDetailsMovie";
 import {IVideoData} from "@/app/models/IVideoMovie";
 import StarRatings from "@/app/components/starRatings/StarRatings";
 import {IGenres, IProduction_companies, ISpoken_languages} from "@/app/models/IMovieByID";
@@ -89,10 +89,12 @@ const MovieDetails = async ({params}:{params:Params}) => {
                              </div>
                          </div>
                      </div>
-                     <div id={styles.imagesHolder}></div>
+                     <div id={styles.imagesHolder}>
+
+                     </div>
                      <div id={styles.videoHolder}>
                          <div id={styles.videoWrapper}>
-                             <VideoSlider videos={videos}/>
+                             <VideoForDetailsMovie videos={videos}/>
                          </div>
                      </div>
                  </div>

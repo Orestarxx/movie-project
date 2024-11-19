@@ -5,4 +5,7 @@
     z-index: 1;
     position: absolute;
     bottom: 0;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }

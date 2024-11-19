@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import MoviesByGenre from "@/app/components/genresComponents/movieGenresComponent/moviesByGenre/MoviesByGenre";
+import styles from './genresPage.styles.module.css'
 type SearchParams = Promise<{[key:string]:string}>
 type Params = Promise<{id:string}>
 type ParamsProps = {
@@ -8,7 +9,7 @@ type ParamsProps = {
 }
 const GenresPage:FC<ParamsProps> =  ({searchParams,params}) => {
     return (
-        <div>
+        <div id={styles.genresPageMovie}>
             <MoviesByGenre searchParams={searchParams} params={params}/>
         </div>
     );
