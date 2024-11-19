@@ -28,6 +28,23 @@ export const movieService = {
           }).then(response =>response.json());
           return dataBuilder<IMovie[]>(movies)
         },
+        getNowPlaying: async (page:string):Promise<IData & {results:IMovie[],dates?:{maximum:string,minimum:string}}> =>{
+            const nowPlaying:IData & {results:IMovie[],dates?:{maximum:string,minimum:string}} =
+                await fetch(baseURL+endPoints.nowPlaying+query.page+page,{
+                method:'GET',
+                headers:headers
+            }).then(response => response.json())
+            return dataBuilder<IMovie[] & {dates?:{maximum:string,minimum:string}} >(nowPlaying)
+
+        },
+        getPopularMovies: async (page:string):Promise<IData & {results:IMovie[]}> =>{
+            const popular = await fetch(baseURL+endPoints.popularMovies+query.page+page,
+                {
+                    method:'GET',
+                    headers:headers
+                }).then(response =>response.json())
+            return dataBuilder<IMovie[]>(popular);
+        }
     },
     SingleMovie:{
         getMovieById: async (id:string):Promise<IMovieByID> =>{

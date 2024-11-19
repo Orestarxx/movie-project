@@ -6,6 +6,9 @@ export const endPoints = {
     //discover
     movies:'/discover/movie',
     tv:'/discover/tv',
+    // movies
+    nowPlaying:'/movie/now_playing',
+    popularMovies:'/movie/popular',
     //genres
     genres:'/genre/movie/list',
     tvGenres:'/genre/tv/list',

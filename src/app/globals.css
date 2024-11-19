@@ -29,7 +29,8 @@ body{
 #menuHolder{
     width: 10%;
     height: 88%;
-    border-right: 1px solid grey;
+    /*border-right: 1px solid grey;*/
+    position: relative;
 }
 #menuHolder>div{
     width: 100%;

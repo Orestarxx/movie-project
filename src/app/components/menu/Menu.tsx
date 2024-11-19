@@ -14,8 +14,14 @@ const Menu = () => {
                                 pathname: '/movies',
                                 query: {page: 1}
                             }}>Movies</Link></li>
-                            <li><Link href={'/nowPlaying'}>Now Playing</Link></li>
-                            <li><Link href={'/popular'}>Popular</Link></li>
+                            <li><Link href={{
+                                pathname:'/nowPlaying',
+                                query:{page:1}
+                            }}>Now Playing</Link></li>
+                            <li><Link href={{
+                                pathname:'/popularMovies',
+                                query:{page:1}
+                            }}>Popular</Link></li>
                             <li><Link href={'/top_rated'}>Top Rated</Link></li>
                             <li><Link href={'/upcoming'}>Upcoming</Link></li>
                         </ul>
