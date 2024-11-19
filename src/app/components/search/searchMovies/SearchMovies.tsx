@@ -13,12 +13,14 @@ type ParamsProps = {
 const SearchMovies:FC<ParamsProps> =  async ({searchParams}) => {
     const query = await searchParams;
     const page =  await searchParams?? 1;
+    console.log(query?.query);
 
-    const foundMovies = await movieService.searchSection.searchMovie(query?.query,page?.page?.toString());
+    const foundMovies =
+        await movieService.searchSection.searchMovie(query?.query? query?.query:'venom',page?.page?.toString());
     console.log(foundMovies);
     return (
         <div>
-            <div>
+            <div id={styles.inputHolder}>
                 <FormForSearch/>
             </div>
            <div id={styles.searchMoviesHolder}>

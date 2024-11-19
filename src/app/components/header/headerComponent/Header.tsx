@@ -9,10 +9,13 @@ const Header = () => {
                 <header>
                     <div id={'searchFormHolder'}>
                         <Link href={{
-                            pathname:'/search/movies',
+                            pathname:'/searchMovie',
                             query:{page:1}
                         }}>Search Movie?</Link>
-                        <Link href={'/'}>Search TV Shows?</Link>
+                        <Link href={{
+                            pathname:'/searchTVshows',
+                            query:{page:1}
+                        }}>Search TV Shows?</Link>
                     </div>
                     <div id={'userAccHolder'}>
                         <UserAccount/>

@@ -2,7 +2,7 @@ import React from 'react';
 import MovieDetails from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/MovieDetails";
 import styles from './detailsMovie.style.module.css'
 
-type Params ={id:string}
+type  Params  = Promise<{id:string}>
 
 const DetailsMoviePage = ({params}:{params:Params}) => {
 

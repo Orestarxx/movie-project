@@ -1,30 +1,35 @@
 'use client'
 import React from 'react';
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import Link from "next/link";
+import styles from './formStyle.module.css'
 
 const FormForSearch = () => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
-    console.log(searchParams.get('page'));
+    console.log(pathname);
     const { replace } = useRouter();
     function searchMovie(term: string) {
         console.log(term);
         const params = new URLSearchParams(searchParams);
         if (term) {
             params.set('query', term);
+
+
         } else {
             params.delete('query');
+
         }
         replace(`${pathname}?${params.toString()}`);
     }
     return (
-        // <Link href={
-        //     {
-        //         pathname:'/search',
-        //         query:{page:1}
-        //     }
-        // }>
-            <div className="relative flex flex-1 flex-shrink-0">
+        <Link href={
+            {
+                pathname: pathname,
+                query:{page:1}
+            }
+        }>
+            <div id={styles.formHolder}>
                 <form action="">
                     <label htmlFor="search" className="sr-only">
                         Search
@@ -41,7 +46,7 @@ const FormForSearch = () => {
                 </form>
 
             </div>
-        // </Link>
+         </Link>
     );
 };
 

@@ -1,17 +1,15 @@
-import React, {FC} from 'react';
+import React from 'react';
 import SearchMovies from "@/app/components/search/searchMovies/SearchMovies";
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsProps = {
     searchParams: SearchParams
 }
-
-const SearchPage:FC<ParamsProps> = async ({searchParams}) => {
-
+const SearchMoviePage = ({searchParams}:ParamsProps) => {
     return (
         <div>
-           <SearchMovies searchParams={searchParams}/>
+            <SearchMovies searchParams={searchParams}/>
         </div>
     );
 };
 
-export default SearchPage;
+export default SearchMoviePage;
