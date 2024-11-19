@@ -24,6 +24,7 @@ export const movieService = {
               await fetch(`${baseURL}${endPoints.movies}${query.page}${page}${pathForGenre}`,{
               method:'GET',
               headers:headers,
+                  cache:'force-cache'
           }).then(response =>response.json());
           return dataBuilder<IMovie[]>(movies)
         },

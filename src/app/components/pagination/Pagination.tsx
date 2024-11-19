@@ -45,8 +45,12 @@ export const Pagination:FC<PaginationControlsProps> = ({next,previous}) =>{
 
     return (
         <div id={"buttonsHolder"}>
-            <button onClick={previousPage} disabled={previous} className={previous === true?'buttonTrue':"buttonFalse"} >prev</button>
-            <button onClick={nextPage} disabled={next} className={next === true?'buttonTrue': "buttonFalse"} >next</button>
+            <button onClick={previousPage} disabled={previous} className={previous === true?'buttonTrue':"buttonFalse"} >
+                {previous?'✖️':' Previous Page'}
+            </button>
+            <button onClick={nextPage} disabled={next} className={next === true?'buttonTrue': "buttonFalse"} >
+                {next? '✖️':'Next Page'}
+            </button>
         </div>
     )
 

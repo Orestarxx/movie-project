@@ -2,11 +2,19 @@
     width: 70px;
     height: 70px;
     border-radius: 40px;
-    border: 1px solid white;
+    border: #212121 0.2rem solid;
+    transition: all 0.4s ease-in;
     background-color: white;
+    box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
 }
 #logoCircle>a>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+#logoCircle {
+    transition: 1s;
+}
+#logoCircle:hover{
+    transform: rotate(180deg);
 }

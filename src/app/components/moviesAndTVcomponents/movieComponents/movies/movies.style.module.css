@@ -13,18 +13,18 @@
     justify-content: center;
     margin: 0 1% 0 1%;
 }
-#genreHolder>div{
+#genreHolder>div {
     width: 100%;
     height: 40px;
     margin-top: 20px;
     border-radius: 30px;
     background: #212121;
-    box-shadow: 10px 10px 25px rgb(25, 25, 25),
-    -10px -10px 25px rgb(60, 60, 60);
     display: flex;
     gap: 5px;
     align-items: center;
     justify-content: space-around;
+}
+#genreHolder>div{
 }
 #genreHolder>div>div{
     /*margin:15px 0 0 5px;*/

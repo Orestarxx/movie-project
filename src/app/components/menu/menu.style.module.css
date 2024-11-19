@@ -1,21 +1,48 @@
 #menuHolder{
     width: 100%;
-    height: 600px;
-    border: 1px solid white;
+    height: 800px;
     color: white;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-top: 30px;
-    background-color: #149CEA;
+
 }
-#menuHolder>ul>li:first-child{
+#menuHolder>div{
+    margin-top: 100px;
+    width: 95%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
+    transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+#menuHolder>div:hover {
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    transform: scale(1.05);
+}
+
+#menuHolder>div>ul>li:first-child{
     margin-bottom: 20px;
-}
-#menuHolder>ul{
-    margin-left: 10px;
 }
 .lists>li{
     font-size: 14px;
     margin-left: 40px;
     margin-top: 10px;
+}
+#settingsAndLogOut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 100%;
+}
+#settingsAndLogOut>li:last-child{
+    color: #a61717;
 }

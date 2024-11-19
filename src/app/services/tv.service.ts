@@ -23,9 +23,23 @@ export const tvService = {
                 method:'GET',
                 headers:headers
             }).then(response => response.json())
-
-
             return  dataBuilder<ITelevision[]>(tv)
         }
+    },
+    singleTVSeries:{
+        getTVShowByID: async (id:string):Promise<ITelevision> =>{
+            return(await fetch(baseURL+endPoints.getTVByID+id,{
+                method:'GET',
+                headers:headers
+            }).then(response =>response.json()))
+        }
+    },
+    searchSection: async (string:string,page:string):Promise<IData & {results:ITelevision[]}> =>{
+        const searchTV:IData & {results:ITelevision[]} =
+            await fetch(`${baseURL+endPoints.searchTV+string}&page=${page}`,{
+                method:'GET',
+                headers:headers
+            }).then(response =>response.json());
+        return dataBuilder<ITelevision[]>(searchTV)
     }
 }
