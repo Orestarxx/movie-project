@@ -154,6 +154,7 @@
 .mainCircleAndNameHolder{
     display: flex;
     width: 100%;
+    overflow: hidden;
 }
 #posterAndDescriptionHolder>div:last-child>div:last-child{
     width: 700px;

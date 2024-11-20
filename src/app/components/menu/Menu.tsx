@@ -22,8 +22,14 @@ const Menu = () => {
                                 pathname:'/popularMovies',
                                 query:{page:1}
                             }}>Popular</Link></li>
-                            <li><Link href={'/top_rated'}>Top Rated</Link></li>
-                            <li><Link href={'/upcoming'}>Upcoming</Link></li>
+                            <li><Link href={{
+                                pathname:'/topRatedMovies',
+                                query:{page:1}
+                            }}>Top Rated</Link></li>
+                            <li><Link href={{
+                                pathname:'/upComing',
+                                query:{page:1}
+                            }}>Upcoming</Link></li>
                         </ul>
                     </li>
                     <li>
@@ -33,10 +39,22 @@ const Menu = () => {
                                 pathname: '/tvseries',
                                 query: {page: 1}
                             }}>TV Series</Link></li>
-                            <li><Link href={'/'}>Airing Today</Link></li>
-                            <li><Link href={'/'}>On The Air</Link></li>
-                            <li><Link href={'/'}>Popular</Link></li>
-                            <li><Link href={'/'}>Top Rated</Link></li>
+                            <li><Link href={{
+                                pathname:'/airingToday',
+                                query:{page:1}
+                            }}>Airing Today</Link></li>
+                            <li><Link href={{
+                                pathname:'onTheAir',
+                                query:{page:1}
+                            }}>On The Air</Link></li>
+                            <li><Link href={{
+                                pathname:'',
+                                query:{page:1}
+                            }}>Popular</Link></li>
+                            <li><Link href={{
+                                pathname:'',
+                                query:{page:1}
+                            }}>Top Rated</Link></li>
                         </ul>
                     </li>
                 </ul>

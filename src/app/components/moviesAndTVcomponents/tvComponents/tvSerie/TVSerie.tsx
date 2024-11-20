@@ -8,7 +8,7 @@ type TVProps = {
 }
 const TvSerie:FC<TVProps> = ({tvSerie}) => {
     return (
-        <Link href={'/tvseries/'+tvSerie.id}>
+        <Link href={'/tvSeries/'+tvSerie.id}>
             <div className={styles.card}>
                 <div className={styles.first}>
                     <span><img src={imgBaseURL + tvSerie.poster_path} alt=""/></span>

@@ -44,6 +44,22 @@ export const movieService = {
                     headers:headers
                 }).then(response =>response.json())
             return dataBuilder<IMovie[]>(popular);
+        },
+        getTopRated: async (page:string):Promise<IData & {results:IMovie[]}> =>{
+            const topRated:IData & {results:IMovie[]} = await fetch(baseURL+endPoints.topRated+query.page+page,{
+                method:'GET',
+                headers:headers
+            }).then(response =>response.json())
+            return dataBuilder<IMovie[]>(topRated)
+        },
+        getUpcoming: async (page:string):Promise<IData & {results:IMovie[],dates?:{maximum:string,minimum:string}}> =>{
+            const upComing:IData & {results:IMovie[],dates?:{maximum:string,minimum:string}} =
+                await fetch(baseURL+endPoints.upComing+query.page+page,
+                {
+                    method:'GET',
+                    headers:headers
+                }).then(response => response.json())
+            return dataBuilder<IMovie[] & {dates?:{maximum:string,minimum:string}}>(upComing)
         }
     },
     SingleMovie:{

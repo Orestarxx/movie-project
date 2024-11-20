@@ -9,6 +9,10 @@ export const endPoints = {
     // movies
     nowPlaying:'/movie/now_playing',
     popularMovies:'/movie/popular',
+    topRated:'/movie/top_rated',
+    upComing:'/movie/upcoming',
+    //tv
+    airingToday:'/tv/airing_today',
     //genres
     genres:'/genre/movie/list',
     tvGenres:'/genre/tv/list',
@@ -24,5 +28,6 @@ export const endPoints = {
 export const query = {
     page:'?page=',
     with_genres:'&with_genres=',
-    query:'?query='
+    query:'?query=',
+    pageAsSecondQuery:'&page='
 }
