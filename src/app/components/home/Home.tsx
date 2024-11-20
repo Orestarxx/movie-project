@@ -13,12 +13,24 @@ const Home = async () => {
                Top Rated,the first card in top rated Movies
             </div>
             <div id={styles.carouselHolder}>
-                <div><ImagesScroller/></div>
-                <div><ImagesScroller/></div>
-                <div><ImagesScroller/></div>
-                <div><ImagesScroller/></div>
-                <div><ImagesScroller/></div>
-                <div><ImagesScroller/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.popularMovies}/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.popularTV}/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.topRatedMovies}/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.topRatedTV}/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.nowPlaying}/></div>
+                <div className={styles.cardsHolder}>
+                    <h2></h2>
+                    <ImagesScroller array={sorted.airingToday}/></div>
             </div>
         </div>
     );

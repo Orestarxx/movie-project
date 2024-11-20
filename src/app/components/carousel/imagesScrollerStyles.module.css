@@ -31,8 +31,9 @@
 
 .carouselSlide img {
     width: 100%; /* Ширина зображення відповідає ширині слайда */
-    height: auto;
-    border-radius: 10px; /* Можна додати округлені кути */
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover/* Можна додати округлені кути */
 }
 
 .prev, .next {
