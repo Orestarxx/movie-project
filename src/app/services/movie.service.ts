@@ -46,7 +46,7 @@ export const movieService = {
             return dataBuilder<IMovie[]>(popular);
         },
         getTopRated: async (page:string):Promise<IData & {results:IMovie[]}> =>{
-            const topRated:IData & {results:IMovie[]} = await fetch(baseURL+endPoints.topRated+query.page+page,{
+            const topRated:IData & {results:IMovie[]} = await fetch(baseURL+endPoints.topRatedMovies+query.page+page,{
                 method:'GET',
                 headers:headers
             }).then(response =>response.json())

@@ -9,10 +9,14 @@ export const endPoints = {
     // movies
     nowPlaying:'/movie/now_playing',
     popularMovies:'/movie/popular',
-    topRated:'/movie/top_rated',
+    topRatedMovies:'/movie/top_rated',
     upComing:'/movie/upcoming',
+
     //tv
     airingToday:'/tv/airing_today',
+    onTheAir:'/tv/on_the_air',
+    popularTV:'/tv/popular',
+    topRatedTV:'/tv/top_rated',
     //genres
     genres:'/genre/movie/list',
     tvGenres:'/genre/tv/list',

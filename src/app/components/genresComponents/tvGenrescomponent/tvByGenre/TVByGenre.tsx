@@ -21,7 +21,7 @@ const TvByGenre:FC<ParamsProps> = async ({params,searchParams}) => {
     return (
         <div>
             <div id={styles.moviesAndGenresHolder}>
-                <div id={styles.genreHolder}><TVGenres/></div>
+                <div id={styles.genreHolder}><TVGenres id={id}/></div>
                 <div id={styles.movies}>{tvWithGenre.results?.map((tvGenre: ITelevision) => <TVSerie key={tvGenre.id} tvSerie={tvGenre}/>)}</div>
             </div>
             <div id={styles.paginationHolder}><Pagination next={tvWithGenre.next} previous={tvWithGenre.previous}/></div>

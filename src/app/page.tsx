@@ -1,9 +1,12 @@
 import React from "react";
+import Home from "@/app/components/home/Home";
+import styles from './page.module.css'
 
-export default function Home() {
+
+export default function HomePage() {
   return (
-   <div>
-     homePage
+   <div id={styles.homePage}>
+    <Home/>
    </div>
   );
 }

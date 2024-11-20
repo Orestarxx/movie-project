@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {movieService} from "@/app/services/movie.service";
-import {IGenre} from "@/app/models/IGenre";
+import {IGenre, IGenreData} from "@/app/models/IGenre";
 import Link from "next/link";
 import './genresStyle.css'
 type GenresProps = {
@@ -8,7 +8,7 @@ type GenresProps = {
 }
 
 const Genres:FC<GenresProps>  = async ({id}) => {
-    const genres = await movieService.genres.getGenres()
+    const genres:IGenreData = await movieService.genres.getGenres()
     console.log(id);
     return (
         <div>

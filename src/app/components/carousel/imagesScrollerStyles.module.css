@@ -1,0 +1,63 @@
+.carouselContainer {
+    position: relative;
+    width: 1300px; /* Ширина контейнера каруселі */
+    margin: auto;
+    height: 150px;
+    overflow: hidden; /* Приховуємо зайве, щоб показувалися тільки 4 слайди */
+}
+
+.carouselWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 4s ease-in-out; /* Плавне переміщення слайдів */
+}
+
+.carouselSlide {
+    min-width: 280px; /* Кожен слайд займає 200px */
+    margin: 0 10px; /* Додаємо відстань між слайдами */
+    flex-shrink: 0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 4s ease-in-out;
+    position: relative;
+}
+
+.carouselSlide img {
+    width: 100%; /* Ширина зображення відповідає ширині слайда */
+    height: auto;
+    border-radius: 10px; /* Можна додати округлені кути */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.next button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

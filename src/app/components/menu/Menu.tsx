@@ -48,11 +48,11 @@ const Menu = () => {
                                 query:{page:1}
                             }}>On The Air</Link></li>
                             <li><Link href={{
-                                pathname:'',
+                                pathname:'/popularTV',
                                 query:{page:1}
                             }}>Popular</Link></li>
                             <li><Link href={{
-                                pathname:'',
+                                pathname:'topRatedTV',
                                 query:{page:1}
                             }}>Top Rated</Link></li>
                         </ul>
