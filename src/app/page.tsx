@@ -1,6 +1,7 @@
 import React from "react";
-import Home from "@/app/components/home/Home";
+
 import styles from './page.module.css'
+import Home from "@/app/components/home/Home";
 
 
 export default function HomePage() {

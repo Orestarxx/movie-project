@@ -11,6 +11,7 @@ export const endPoints = {
     popularMovies:'/movie/popular',
     topRatedMovies:'/movie/top_rated',
     upComing:'/movie/upcoming',
+    account:'/account/21524014',
 
     //tv
     airingToday:'/tv/airing_today',

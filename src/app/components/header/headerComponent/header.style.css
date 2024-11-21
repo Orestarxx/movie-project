@@ -8,13 +8,15 @@
 #headerHolder>header{
     width: 100%;
     height: 70px;
-    border-bottom: 1px solid grey;
+    border-bottom: 3px solid grey;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     border-top-right-radius: 20px;
     color: white;
+    border-left: 2px solid grey;
+    border-bottom-left-radius: 20px;
 
 }
 #navHolder{
@@ -31,4 +33,23 @@
 }
 #userAccHolder{
     margin-right: 30px;
+}
+#searchFormHolder{
+    width: 400px;
+    height: 60px;
+    border: 3px solid black;
+    display: flex;
+    margin-left: 400px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+.searchDiv{
+    height: 40px;
+    width: 170px;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

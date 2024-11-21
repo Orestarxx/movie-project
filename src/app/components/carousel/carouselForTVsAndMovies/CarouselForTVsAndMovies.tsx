@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useState } from 'react';
-import styles from './imagesScrollerStyles.module.css';
+import styles from './carouselForMoviesAndTVs.module.css';
 import {IMovie} from "@/app/models/IMovie";
 import {ITelevision} from "@/app/models/ITelevision";
 import {imgBaseURL} from "@/app/urls/urls";
@@ -10,9 +10,9 @@ type CarouselProps = {
     array:IMovie[] | ITelevision[]
     pathAndName:{path:string,name:string}
 }
-const Carousel = ({array,pathAndName:{path,name}}:CarouselProps) => {
-   const changedArray:(IMovie|ITelevision)[] =  array.map(
-       (item:IMovie|ITelevision,index):IMovie|ITelevision =>({...item,position:index+1}))
+const CarouselForFilms = ({array,pathAndName:{path,name}}:CarouselProps) => {
+    const changedArray:(IMovie|ITelevision)[] =  array.map(
+        (item:IMovie|ITelevision,index):IMovie|ITelevision =>({...item,position:index+1}))
     const slidesToShow = 4;
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -25,15 +25,16 @@ const Carousel = ({array,pathAndName:{path,name}}:CarouselProps) => {
     };
 
     const visibleImages = changedArray?.slice(currentIndex, currentIndex + slidesToShow);
-    console.log(visibleImages);
 
     return (
         <div className={styles.carouselHolder}>
-            <h2>{name}</h2>
+            <div className={styles.nameHolder}>
+                <h2>{name}</h2>
+            </div>
             <div className={styles.carouselContainer}>
                 <div className={styles.carouselWrapper}>
                     <div className={styles.carousel}>
-                        {visibleImages?.map((object: ITelevision | IMovie, index) => (
+                        {visibleImages?.map((object, index) => (
                             <Link href={path + object.id} key={index}>
                                 <div className={styles.carouselSlide}>
                                     <div className={styles.infoCarouselDiv}>
@@ -59,4 +60,4 @@ const Carousel = ({array,pathAndName:{path,name}}:CarouselProps) => {
     );
 };
 
-export default Carousel;
+export default CarouselForFilms;
