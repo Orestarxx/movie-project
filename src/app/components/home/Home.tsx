@@ -1,12 +1,12 @@
 import React from 'react';
-import ImagesScroller from "@/app/components/carousel/Carousel";
+
 import styles from './home.style.module.css'
 import {sortedMoviesAndTV} from "@/app/helpers/sortMoviesAndFilms";
-import {IObjectWithFilmsAndTVs} from "@/app/models/IObjectWithFilmsAndTVs";
+import Carousel from "@/app/components/carousel/Carousel";
 
 const Home = async () => {
-   const sorted:IObjectWithFilmsAndTVs = await sortedMoviesAndTV();
-    console.log(sorted);
+   const sorted = await sortedMoviesAndTV();
+
     return (
         <div id={styles.home}>
             <div id={styles.topRatedHolder}>
@@ -15,22 +15,22 @@ const Home = async () => {
             <div id={styles.carouselHolder}>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.popularMovies}/></div>
+                    <Carousel array={sorted.popularMovies}/></div>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.popularTV}/></div>
+                    <Carousel array={sorted.popularTV}/></div>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.topRatedMovies}/></div>
+                    <Carousel array={sorted.topRatedMovies}/></div>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.topRatedTV}/></div>
+                    <Carousel array={sorted.topRatedTV}/></div>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.nowPlaying}/></div>
+                    <Carousel array={sorted.nowPlaying}/></div>
                 <div className={styles.cardsHolder}>
                     <h2></h2>
-                    <ImagesScroller array={sorted.airingToday}/></div>
+                    <Carousel array={sorted.airingToday}/></div>
             </div>
         </div>
     );

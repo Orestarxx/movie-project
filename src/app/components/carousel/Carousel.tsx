@@ -9,31 +9,9 @@ type CarouselProps = {
     array:IMovie[] | ITelevision[]
 }
 const Carousel = ({array}:CarouselProps) => {
-    // Масив з 20 карток (обкладинок фільмів)
-    // const images = [
-    //     "https://via.placeholder.com/200x300/FF5733/FFFFFF?text=Film+1",
-    //     "https://via.placeholder.com/200x300/33FF57/FFFFFF?text=Film+2",
-    //     "https://via.placeholder.com/200x300/3357FF/FFFFFF?text=Film+3",
-    //     "https://via.placeholder.com/200x300/FF33A8/FFFFFF?text=Film+4",
-    //     "https://via.placeholder.com/200x300/33A8FF/FFFFFF?text=Film+5",
-    //     "https://via.placeholder.com/200x300/FF5733/FFFFFF?text=Film+6",
-    //     "https://via.placeholder.com/200x300/33FF57/FFFFFF?text=Film+7",
-    //     "https://via.placeholder.com/200x300/3357FF/FFFFFF?text=Film+8",
-    //     "https://via.placeholder.com/200x300/FF33A8/FFFFFF?text=Film+9",
-    //     "https://via.placeholder.com/200x300/33A8FF/FFFFFF?text=Film+10",
-    //     "https://via.placeholder.com/200x300/FF5733/FFFFFF?text=Film+11",
-    //     "https://via.placeholder.com/200x300/33FF57/FFFFFF?text=Film+12",
-    //     "https://via.placeholder.com/200x300/3357FF/FFFFFF?text=Film+13",
-    //     "https://via.placeholder.com/200x300/FF33A8/FFFFFF?text=Film+14",
-    //     "https://via.placeholder.com/200x300/33A8FF/FFFFFF?text=Film+15",
-    //     "https://via.placeholder.com/200x300/FF5733/FFFFFF?text=Film+16",
-    //     "https://via.placeholder.com/200x300/33FF57/FFFFFF?text=Film+17",
-    //     "https://via.placeholder.com/200x300/3357FF/FFFFFF?text=Film+18",
-    //     "https://via.placeholder.com/200x300/FF33A8/FFFFFF?text=Film+19",
-    //     "https://via.placeholder.com/200x300/33A8FF/FFFFFF?text=Film+20"
-    // ];
 
-    const slidesToShow = 4;  // кількість слайдів, які одночасно відображаються
+
+    const slidesToShow = 4;
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const moveSlide = (direction:string) => {
@@ -44,7 +22,7 @@ const Carousel = ({array}:CarouselProps) => {
         }
     };
 
-    const visibleImages = array?.slice(currentIndex, currentIndex + slidesToShow); // вибираємо тільки видимі картки
+    const visibleImages = array?.slice(currentIndex, currentIndex + slidesToShow);
 
     return (
         <div className={styles.carouselContainer}>
@@ -52,7 +30,8 @@ const Carousel = ({array}:CarouselProps) => {
                 <div className={styles.carousel}>
                     {visibleImages?.map((object:ITelevision|IMovie, index) => (
                         <div className={styles.carouselSlide} key={index}>
-                            <img src={imgBaseURL+object.backdrop_path} alt='poster' />
+                            <img src={object.backdrop_path?
+                                imgBaseURL+object.backdrop_path:imgBaseURL+object.poster_path} alt='poster' />
                             {index}
                         </div>
                     ))}
