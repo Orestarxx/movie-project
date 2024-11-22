@@ -11,7 +11,6 @@ import {IVideoData} from "@/app/models/IVideoMovie";
 import VideoForDetailsMovieAndTV
     from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoForDetailsMovieAndTV/VideoForDetailsMovieAndTV";
 import {IDataImages} from "@/app/models/IImage";
-import FavoriteForTV from "@/app/components/wishList/forTV/FavoriteForTV";
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsId = Promise<{id:string}>
 type ParamsProps = {
@@ -90,7 +89,7 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
                         </div>
                     </div>
                     <div id={styles.videoHolder}>
-                                <FavoriteForTV tv={tvShow}/>
+
                         <div id={styles.videoWrapper}>
                             <VideoForDetailsMovieAndTV videos={videos}/>
                         </div>

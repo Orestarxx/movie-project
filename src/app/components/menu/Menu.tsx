@@ -60,6 +60,9 @@ const Menu = () => {
                 </ul>
                 <ul id={styles.settingsAndLogOut}>
                     <li>
+                        <Link href={'/favorite'}>Favorite</Link>
+                    </li>
+                    <li>
                         <Link href={'/settings'}>Settings</Link>
                     </li>
                     <li><Link href={'/'}> Log Out </Link></li>

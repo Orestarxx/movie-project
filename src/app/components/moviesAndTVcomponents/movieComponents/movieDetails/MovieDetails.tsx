@@ -9,7 +9,7 @@ import StarRatings from "@/app/components/starRatings/StarRatings";
 import {IGenres, IProduction_companies, ISpoken_languages} from "@/app/models/IMovieByID";
 import Link from "next/link";
 import {IDataImages} from "@/app/models/IImage";
-import FavoriteForTV from "@/app/components/wishList/forTV/FavoriteForTV";
+import FavoriteForTVAndMovies from "@/app/components/wishList/FavoriteForTVAndMovies";
 
 
 type Params = Promise<{id:string}>
@@ -92,7 +92,7 @@ const MovieDetails = async ({params}:{params:Params}) => {
                          </div>
                      </div>
                      <div id={styles.videoHolder}>
-                         <FavoriteForTV movie={movieByID}/>
+                         <FavoriteForTVAndMovies movie={movieByID}/>
                          <div id={styles.videoWrapper}>
                              <VideoForDetailsMovieAndTV videos={videos}/>
                          </div>
