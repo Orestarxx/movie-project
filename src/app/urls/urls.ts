@@ -24,11 +24,14 @@ export const endPoints = {
     //search
     searchMovie:'/search/movie?query=',
     searchTV:'/search/tv?query=',
-    //By id
+    //By id movies
     getMovieByID:'/movie/',
-    getTVByID:'/tv/',
     images:'/images',
     videos:'/videos',
+    //by id TV
+    getTVByID:'/tv/',
+
+
 }
 export const query = {
     page:'?page=',

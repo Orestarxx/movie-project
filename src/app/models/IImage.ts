@@ -1,5 +1,5 @@
 export interface IDataImages {
-    backdrops:[]
+    backdrops:IImage[]
 	id:number,
 	logos:IImage[];
     posters:IImage[]
@@ -12,4 +12,6 @@ export interface IImage {
 	vote_average: number;
 	vote_count: number;
 	width: number;
+	position?:number
 }
+

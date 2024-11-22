@@ -5,6 +5,8 @@ import {IData} from "@/app/models/IData";
 import {ITelevision} from "@/app/models/ITelevision";
 import {dataBuilder} from "@/app/helpers/databuilder";
 import {ITelevisionByID} from "@/app/models/ITelevisionByID";
+import { IDataImages} from "@/app/models/IImage";
+import {IVideoData} from "@/app/models/IVideoMovie";
 
 
 export const tvService = {
@@ -61,6 +63,18 @@ export const tvService = {
                 method:'GET',
                 headers:headers
             }).then(response =>response.json()))
+        },
+        getImagesOfTV: async (id:string) :Promise<IDataImages> =>{
+            return (await fetch(baseURL+endPoints.getTVByID+id+endPoints.images,{
+                method:'GET',
+                headers:headers
+            }).then(response => response.json()))
+        },
+        getVideosOfTV: async (id:string):Promise<IVideoData> =>{
+              return (await fetch(baseURL+endPoints.getTVByID+id+endPoints.videos,{
+                  method:'GET',
+                  headers:headers
+              }).then(response =>response.json()))
         }
     },
     searchSection: async (string:string,page:string):Promise<IData & {results:ITelevision[]}> =>{

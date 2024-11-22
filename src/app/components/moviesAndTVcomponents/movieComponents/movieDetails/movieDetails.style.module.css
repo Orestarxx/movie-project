@@ -47,10 +47,7 @@
     margin-left: 10px;
     margin-top: 10px;
 }
-#posterHolder>img{
-    width: 100%;
-    height: 90%;
-}
+
 #posterHolder>img, #posterHolder, #overview{
     border-radius: 10px;
 }
@@ -265,11 +262,32 @@ font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
-}
-#videoWrapper{
-
+    height: 450px;
+    margin-top: 10px;
 }
 #videoHolder>frame{
     margin-top: 20px;
+}
+#imagesHolder{
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+}
+#postersHolder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.image{
+    width: 20%;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+.image>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }

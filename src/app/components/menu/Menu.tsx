@@ -44,7 +44,7 @@ const Menu = () => {
                                 query:{page:1}
                             }}>Airing Today</Link></li>
                             <li><Link href={{
-                                pathname:'onTheAir',
+                                pathname:'/onTheAir',
                                 query:{page:1}
                             }}>On The Air</Link></li>
                             <li><Link href={{
@@ -52,7 +52,7 @@ const Menu = () => {
                                 query:{page:1}
                             }}>Popular</Link></li>
                             <li><Link href={{
-                                pathname:'topRatedTV',
+                                pathname:'/topRatedTV',
                                 query:{page:1}
                             }}>Top Rated</Link></li>
                         </ul>

@@ -10,8 +10,8 @@ type ParamsProps = {
     searchParams: SearchParams
 }
 const TopRatedTV = async ({searchParams}:ParamsProps) => {
-    const {page} = await searchParams;
-    const topRatedTV = await tvService.tvSeries.getTopRatedTV(page)
+    const {page} = await searchParams?? 1;
+    const topRatedTV = await tvService.tvSeries.getTopRatedTV(page.toString())
     return (
         <div id={styles.moviesHolder}>
             <div id={styles.moviesAndGenresHolder}>

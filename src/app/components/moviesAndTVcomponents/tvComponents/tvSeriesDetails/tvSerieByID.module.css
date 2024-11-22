@@ -39,10 +39,10 @@
 }
 #posterAndDescriptionHolder{
     display: flex;
+
 }
 #posterHolder{
     width: 350px;
-    /*height: 500px;*/
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -52,6 +52,7 @@
 }
 #posterHolder>img, #posterHolder, #overview{
     border-radius: 10px;
+
 }
 #posterHolder>img {
     width: 350px;
@@ -80,6 +81,11 @@
 #posterHolder>img:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
+#overviewHolder{
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 100%;
+}
 #overview{
     width: 700px;
     border: 1px solid white;
@@ -107,4 +113,171 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+#ratingCircle{
+    position: absolute;
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    z-index: 1;
+    right: -12px;
+    top: -50px;
+    background-color: orange;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#release{
+    height: 30px;
+    position: absolute;
+    border: 1px solid white;
+    background-color: orange;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    left: 10px;
+    top: -30px;
+    border-radius: 10px;
+}
+/* productionCompanies*/
+#holderOfCompanies{
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    margin-top: 5px;
+}
+#holderOfCompanies:hover{
+    transform: scale(1.05);
+}
+#holderOfCompanies:active{
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+.mainCircleAndNameHolder{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+#posterAndDescriptionHolder>div:last-child>div:last-child{
+    width: 700px;
+    height: 100px;
+    color: white;
+    display: flex;
+}
+#posterAndDescriptionHolder>div:last-child{
+    width: 700px;
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 300px;
+    color: white;
+}
+.circleLogo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background: white;
+}
+.circleLogo>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    z-index: 1;
+    background-size: cover;
+    object-fit: contain;
+}
+
+
+.circleAndNameHolder{
+    width: 130px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.companyName{
+    font-size: 10px;
+    color: white;
+}
+/* genresSide*/
+#genresHolder{
+    width: 100%;
+    display: flex;
+    height: 50px;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+#genreHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.genre{
+    font-size: 12px;
+}
+/*language*/
+#languageHolder{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    transition: all 0.5s;
+}
+#languageHolder>div:last-child>div{
+    font-size: 12px;
+}
+#languagesHolder{
+    display: flex;
+    gap: 10px;
+}
+#popularity{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+#popularity>div:last-child{
+    font-size: 10px;
+}
+#videoHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+#videoHolder>frame{
+    margin-top: 20px;
+}
+#imagesHolder{
+    margin-top: 10px;
+    width: 100%;
+    height: 250px;
+}
+#postersHolder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.image{
+    width: 20%;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+.image>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+#genresHolder:hover, #languageHolder:hover, #popularity:hover{
+    transform: scale(1.05);
+}
+#genresHolder:active, #languageHolder:active, #popularity:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }

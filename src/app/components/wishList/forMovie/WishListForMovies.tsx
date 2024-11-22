@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Theme = () => {
-    //todo theme for project
+const WishListForMovies = () => {
     return (
         <div>
+
         </div>
     );
 };
 
-export default Theme;
+export default WishListForMovies;

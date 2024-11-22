@@ -10,9 +10,9 @@ type CarouselProps = {
     array:IMovie[] | ITelevision[]
     pathAndName:{path:string,name:string}
 }
-const CarouselForFilms = ({array,pathAndName:{path,name}}:CarouselProps) => {
-    const changedArray:(IMovie|ITelevision)[] =  array.map(
-        (item:IMovie|ITelevision,index):IMovie|ITelevision =>({...item,position:index+1}))
+const CarouselForFilms = ({array,pathAndName:{path,name,}}:CarouselProps) => {
+    const changedArray:(IMovie|ITelevision)[] = array.map(
+        (item:IMovie|ITelevision,index):IMovie|ITelevision =>({...item,position:index+1}));
     const slidesToShow = 4;
     const [currentIndex, setCurrentIndex] = useState(0);
 
