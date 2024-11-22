@@ -11,16 +11,14 @@ import {IVideoData} from "@/app/models/IVideoMovie";
 import VideoForDetailsMovieAndTV
     from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoForDetailsMovieAndTV/VideoForDetailsMovieAndTV";
 import {IDataImages} from "@/app/models/IImage";
-import WishListForTv from "@/app/components/wishList/forTV/WishListForTV";
+import FavoriteForTV from "@/app/components/wishList/forTV/FavoriteForTV";
 type SearchParams = Promise<{[key:string]:string}>
 type ParamsId = Promise<{id:string}>
 type ParamsProps = {
     params:ParamsId,
     searchParams:SearchParams
 }
-const TvSeriesDetails:FC<ParamsProps> =  async ({params,searchParams}) => {
-    const paramss = await searchParams;
-    console.log(paramss);
+const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
     const {id} = await params;
     const tvShow:ITelevisionByID = await tvService.singleTVSeries.getTVShowByID(id.toString())
     const imagesOfTV:IDataImages = await  tvService.singleTVSeries.getImagesOfTV(id.toString())
@@ -92,7 +90,7 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params,searchParams}) => {
                         </div>
                     </div>
                     <div id={styles.videoHolder}>
-                                <WishListForTv tv={tvShow}/>
+                                <FavoriteForTV tv={tvShow}/>
                         <div id={styles.videoWrapper}>
                             <VideoForDetailsMovieAndTV videos={videos}/>
                         </div>

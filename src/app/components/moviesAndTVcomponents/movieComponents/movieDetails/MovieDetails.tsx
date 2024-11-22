@@ -14,9 +14,9 @@ import {IDataImages} from "@/app/models/IImage";
 type Params = Promise<{id:string}>
 const MovieDetails = async ({params}:{params:Params}) => {
    const id  = await params;
-  const movieByID = await movieService.SingleMovie.getMovieById(id.id);
-  const images:IDataImages = await  movieService.SingleMovie.getImagesOfMovie(id.id);
-  const videos:IVideoData = await movieService.SingleMovie.getVideosOfMovie(id.id);
+  const movieByID = await movieService.SingleMovie.getMovieById(id.id.toString());
+  const images:IDataImages = await  movieService.SingleMovie.getImagesOfMovie(id.id.toString());
+  const videos:IVideoData = await movieService.SingleMovie.getVideosOfMovie(id.id.toString());
     console.log(movieByID);
 
 

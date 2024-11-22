@@ -5,13 +5,13 @@ import {ITelevisionByID} from "@/app/models/ITelevisionByID";
 type wishListProps ={
     tv:ITelevisionByID
 }
-const WishListForTv = ({tv}:wishListProps) => {
+const FavoriteForTV = ({tv}:wishListProps) => {
     const addToWishlist = (tv:ITelevisionByID) =>{
-        const localStorageArr = JSON.parse(localStorage.getItem('wishList')||'') || [];
-        const array = localStorageArr as ITelevisionByID[]
-        if(Array.isArray(localStorageArr)){
+       const favoriteTVArr:string|ITelevisionByID[] =JSON.parse( localStorage.getItem('favoriteTV')|| '') ||[] ;
+      const array = favoriteTVArr as ITelevisionByID[]
+        if(Array.isArray(array)){
             array.push(tv)
-        localStorage.setItem('wishList', JSON.stringify(localStorageArr))
+            localStorage.setItem('wishList', JSON.stringify(array))
         }
     }
     return (
@@ -23,4 +23,4 @@ const WishListForTv = ({tv}:wishListProps) => {
     );
 };
 
-export default WishListForTv;
+export default FavoriteForTV;
