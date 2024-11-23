@@ -1,4 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## What the project does.
+This project is created to watch Movies and TV`s.You can find here movies and TV's by genres,topRated,popular,upComing and other categories.
+You can add some of them to your favorite list and watch them later,or now it's on you.
+Also, you can search movies and TV's by writing something in search input and see instantaneous the results of you search,don't need to click the button for getting results.
+Here we have a pagination in every page which needs it.
+## Why the project is useful.
+This project can give you fresh information about topRated popular and upComing TV's and Movies,you can watch trending and a lot of other categories.
 
 ## Getting Started
 
