@@ -11,7 +11,7 @@ const Favorite = () => {
     const getFromLocalStorage = () =>{
     const favoriteMovieArr = JSON.parse( localStorage.getItem('movieList')|| '[]');
     const arrayOfMovies = favoriteMovieArr as IMovieByID[]|[];
-    const favoriteTVArr = JSON.parse( localStorage.getItem('favoriteTV')|| '[]');
+    const favoriteTVArr = JSON.parse( localStorage.getItem('tvList')|| '[]');
     const arrayOfTVs = favoriteTVArr as ITelevisionByID[]
         return {movies:arrayOfMovies,tv:arrayOfTVs}
     }
@@ -22,17 +22,24 @@ const Favorite = () => {
        }
        return movie
    })
-return newMovies
+        const newTV = tv?.map((show:ITelevisionByID) =>{
+              if(tv?.length > 10){
+                  tv?.pop()
+              }
+              return show
+        })
+return {movies:newMovies,tv:newTV}
     }
-   const arraysof = (conditions(getFromLocalStorage().movies, getFromLocalStorage().tv));
-
+   const array = (conditions(getFromLocalStorage().movies, getFromLocalStorage().tv));
+    console.log(array.tv);
+    console.log(array.movies);
 
     return (
         <div id={'favoriteHolder'}>
          <div id={'favoriteMovies'}>
              <h2>Favorite Movies</h2>
             <div>
-                {arraysof && arraysof.length?arraysof.map((movie:IMovieByID) =>
+                {array.movies && array.movies.length?array.movies.map((movie:IMovieByID) =>
                     <Link href={'/movies/'+movie.id} key={movie.id}>
                         <div className={styles.card}>
                             <div className={styles.first}>
@@ -54,10 +61,39 @@ return newMovies
 
 
                         </div>
-                    </Link>):<div id={'message'}>Add some Movies to this list</div>}
+                    </Link>):<div className={'message'}>Add some TV Shows to this list,Here can be only ten Movies If you add eleven one the first one you added would be deleted</div>}
             </div>
          </div>
-            <div id={'favoriteTVs'}></div>
+            <div id={'favoriteTVs'}>
+                <h2>Favorite TV shows</h2>
+                <div>
+                    {array.tv && array.tv.length ? array.tv.map((show: ITelevisionByID) =>
+                        <Link href={'/tvseries/' + show.id} key={show.id}>
+                            <div className={styles.card}>
+                                <div className={styles.first}>
+                                    <span><img src={imgBaseURL + show.poster_path} alt=""/></span>
+                                </div>
+                                <div className={styles.second}>
+                    <span>
+                        <img src={show.poster_path ? imgBaseURL + show.poster_path : imgBaseURL + show.backdrop_path}
+                             alt=""/>
+                        <div>
+                            <div className={styles.title}>{show.name}</div>
+                            <div className={styles.description}><p>{show.overview}</p></div>
+                            <div className={styles.releaseAndRating}>
+                                <div>{show.popularity}</div>
+                                <div>{show.first_air_date}</div>
+                            </div>
+                        </div>
+                    </span>
+                                </div>
+
+
+                            </div>
+                        </Link>) : <div className={'message'}>Add some TV Shows to this list,Here can be only ten TV show If you add eleven one the first one you added would be deleted</div>}
+                </div>
+
+            </div>
         </div>
     );
 };

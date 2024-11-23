@@ -1,35 +1,59 @@
 'use client'
 import React, {useState} from 'react';
-import './wishListTV.style.css'
+import './wishListTVAndMovies.style.css'
 
 import {IMovieByID} from "@/app/models/IMovieByID";
+import {ITelevisionByID} from "@/app/models/ITelevisionByID";
 type wishListProps ={
-    movie:IMovieByID
+    movie?:IMovieByID,
+    tv?:ITelevisionByID
 }
-const FavoriteForTVAndMovies = ({movie}: wishListProps) => {
+const FavoriteForTVAndMovies = ({movie,tv}: wishListProps) => {
      const [isObjectHere,setIsObjectHere] = useState<boolean>()
     const findId = () => {
-        const favoriteMoviesArr = JSON.parse(localStorage.getItem('movieList') || '[]');
-        const array = favoriteMoviesArr as IMovieByID[]
-        return array.find((obj: IMovieByID) => obj.id === movie.id);
+        if (tv) {
+            const favoriteMoviesArr = JSON.parse(localStorage.getItem('tvList') || '[]');
+            const array = favoriteMoviesArr as ITelevisionByID[]
+            return array.find((obj: ITelevisionByID) => obj.id === tv.id);
+        } else if (movie) {
+            const favoriteMoviesArr = JSON.parse(localStorage.getItem('movieList') || '[]');
+            const array = favoriteMoviesArr as IMovieByID[]
+            return array.find((obj: IMovieByID) => obj.id === movie.id);
+        }
     }
 
     const addFavoriteList = () => {
-        const favoriteMoviesArr = JSON.parse(localStorage.getItem('movieList') || '[]');
-        const array = favoriteMoviesArr as IMovieByID[]
-        const newObjectMovie = findId()
-        if (!newObjectMovie) {
-            array.unshift(movie)
-            setIsObjectHere(false)
-        }else{
-            setIsObjectHere(true)
+        if(movie){
+            const favoriteMoviesArr = JSON.parse(localStorage.getItem('movieList') || '[]');
+            const array = favoriteMoviesArr as IMovieByID[]
+            const newObjectMovie = findId()
+            if (!newObjectMovie) {
+                array.unshift(movie)
+                setIsObjectHere(false)
+            }else{
+                setIsObjectHere(true)
+            }
+            localStorage.setItem('movieList', JSON.stringify(array));
+        }else if(tv){
+            const favoriteMoviesArr = JSON.parse(localStorage.getItem('tvList') || '[]');
+            const array = favoriteMoviesArr as ITelevisionByID[]
+            const newObjectMovie = findId()
+            if (!newObjectMovie) {
+                array.unshift(tv)
+                setIsObjectHere(false)
+            }else{
+                setIsObjectHere(true)
+            }
+            localStorage.setItem('tvList', JSON.stringify(array));
         }
-        localStorage.setItem('movieList', JSON.stringify(array));
     }
     return (
         <div className={'buttonHolder'}>
             <button onClick={addFavoriteList}
-                    disabled={isObjectHere}>{findId()? 'added to Favorite' : 'add to Favorite'}</button>
+                    disabled={isObjectHere}
+                    className={'addToFavorite'}
+            >{findId()? 'added ' : 'add'}</button>
+            <div className={'bell'}>to Favorite</div>
         </div>
     );
 
