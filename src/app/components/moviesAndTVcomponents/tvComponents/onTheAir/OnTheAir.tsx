@@ -5,11 +5,12 @@ import TVGenres from "@/app/components/genresComponents/tvGenrescomponent/genres
 import {ITelevision} from "@/app/models/ITelevision";
 import TVSerie from "@/app/components/moviesAndTVcomponents/tvComponents/tvSerie/TVSerie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string}>
+
+type SearchParams = Promise<{ [key: string]: string }>
 type ParamsProps = {
     searchParams: SearchParams
 }
-const OnTheAir = async ({searchParams}:ParamsProps) => {
+const OnTheAir = async ({searchParams}: ParamsProps) => {
     const {page} = await searchParams;
     const onTheAir = await tvService.tvSeries.getOnAirToday(page)
     console.log(onTheAir);

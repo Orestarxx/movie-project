@@ -5,11 +5,12 @@ import TVGenres from "@/app/components/genresComponents/tvGenrescomponent/genres
 import {ITelevision} from "@/app/models/ITelevision";
 import TVSerie from "@/app/components/moviesAndTVcomponents/tvComponents/tvSerie/TVSerie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string}>
+
+type SearchParams = Promise<{ [key: string]: string }>
 type ParamsProps = {
     searchParams: SearchParams
 }
-const AiringToday = async ({searchParams}:ParamsProps) => {
+const AiringToday = async ({searchParams}: ParamsProps) => {
     const {page} = await searchParams;
     const airingToday = await tvService.tvSeries.getAiringToday(page);
     return (
@@ -19,7 +20,7 @@ const AiringToday = async ({searchParams}:ParamsProps) => {
                     <TVGenres/>
                 </div>
                 <div id={styles.movies}>{airingToday.results?.map((tvSerie: ITelevision) => <TVSerie key={tvSerie.id}
-                                                                                                  tvSerie={tvSerie}/>)}</div>
+                                                                                                     tvSerie={tvSerie}/>)}</div>
                 <Pagination next={airingToday.next} previous={airingToday.previous}/>
             </div>
         </div>

@@ -4,11 +4,12 @@ import styles from "@/app/components/moviesAndTVcomponents/movieComponents/movie
 import Genres from "@/app/components/genresComponents/movieGenresComponent/genres/Genres";
 import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/Movie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string}>
+
+type SearchParams = Promise<{ [key: string]: string }>
 type ParamsProps = {
     searchParams: SearchParams
 }
-const PopularMovies = async ({searchParams}:ParamsProps) => {
+const PopularMovies = async ({searchParams}: ParamsProps) => {
     const {page} = await searchParams;
     const popular = await movieService.movies.getPopularMovies(page);
     return (

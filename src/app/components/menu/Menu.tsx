@@ -8,52 +8,52 @@ const Menu = () => {
             <div>
                 <ul>
                     <li>
-                        <h2>allMovies</h2>
+                        <h2 className={styles.name}>allMovies</h2>
                         <ul className={styles.lists}>
                             <li><Link href={{
                                 pathname: '/movies',
                                 query: {page: 1}
                             }}>Movies</Link></li>
                             <li><Link href={{
-                                pathname:'/nowPlaying',
-                                query:{page:1}
+                                pathname: '/nowPlaying',
+                                query: {page: 1}
                             }}>Now Playing</Link></li>
                             <li><Link href={{
-                                pathname:'/popularMovies',
-                                query:{page:1}
+                                pathname: '/popularMovies',
+                                query: {page: 1}
                             }}>Popular</Link></li>
                             <li><Link href={{
-                                pathname:'/topRatedMovies',
-                                query:{page:1}
+                                pathname: '/topRatedMovies',
+                                query: {page: 1}
                             }}>Top Rated</Link></li>
                             <li><Link href={{
-                                pathname:'/upComing',
-                                query:{page:1}
+                                pathname: '/upComing',
+                                query: {page: 1}
                             }}>Upcoming</Link></li>
                         </ul>
                     </li>
                     <li>
-                        <h2>All TV Series</h2>
+                        <h2 className={styles.name}>All TV Series</h2>
                         <ul className={styles.lists}>
                             <li><Link href={{
                                 pathname: '/tvseries',
                                 query: {page: 1}
                             }}>TV Series</Link></li>
                             <li><Link href={{
-                                pathname:'/airingToday',
-                                query:{page:1}
+                                pathname: '/airingToday',
+                                query: {page: 1}
                             }}>Airing Today</Link></li>
                             <li><Link href={{
-                                pathname:'/onTheAir',
-                                query:{page:1}
+                                pathname: '/onTheAir',
+                                query: {page: 1}
                             }}>On The Air</Link></li>
                             <li><Link href={{
-                                pathname:'/popularTV',
-                                query:{page:1}
+                                pathname: '/popularTV',
+                                query: {page: 1}
                             }}>Popular</Link></li>
                             <li><Link href={{
-                                pathname:'/topRatedTV',
-                                query:{page:1}
+                                pathname: '/topRatedTV',
+                                query: {page: 1}
                             }}>Top Rated</Link></li>
                         </ul>
                     </li>

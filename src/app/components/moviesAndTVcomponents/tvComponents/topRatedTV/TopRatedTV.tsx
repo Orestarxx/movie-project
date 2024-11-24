@@ -5,12 +5,13 @@ import TVGenres from "@/app/components/genresComponents/tvGenrescomponent/genres
 import {ITelevision} from "@/app/models/ITelevision";
 import TVSerie from "@/app/components/moviesAndTVcomponents/tvComponents/tvSerie/TVSerie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string}>
+
+type SearchParams = Promise<{ [key: string]: string }>
 type ParamsProps = {
     searchParams: SearchParams
 }
-const TopRatedTV = async ({searchParams}:ParamsProps) => {
-    const {page} = await searchParams?? 1;
+const TopRatedTV = async ({searchParams}: ParamsProps) => {
+    const {page} = await searchParams ?? 1;
     const topRatedTV = await tvService.tvSeries.getTopRatedTV(page.toString())
     return (
         <div id={styles.moviesHolder}>
@@ -19,7 +20,7 @@ const TopRatedTV = async ({searchParams}:ParamsProps) => {
                     <TVGenres/>
                 </div>
                 <div id={styles.movies}>{topRatedTV.results?.map((tvSerie: ITelevision) => <TVSerie key={tvSerie.id}
-                                                                                                   tvSerie={tvSerie}/>)}</div>
+                                                                                                    tvSerie={tvSerie}/>)}</div>
                 <Pagination next={topRatedTV.next} previous={topRatedTV.previous}/>
             </div>
         </div>

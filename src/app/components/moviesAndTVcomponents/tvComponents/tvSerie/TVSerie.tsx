@@ -3,19 +3,22 @@ import {ITelevision} from "@/app/models/ITelevision";
 import Link from "next/link";
 import styles from "@/app/components/moviesAndTVcomponents/movieComponents/movie/movie.style.module.css";
 import {imgBaseURL} from "@/app/urls/urls";
+
 type TVProps = {
-    tvSerie:ITelevision
+    tvSerie: ITelevision
 }
-const TvSerie:FC<TVProps> = ({tvSerie}) => {
+const TvSerie: FC<TVProps> = ({tvSerie}) => {
     return (
-        <Link href={'/tvseries/'+tvSerie.id}>
+        <Link href={'/tvseries/' + tvSerie.id}>
             <div className={styles.card}>
                 <div className={styles.first}>
                     <span><img src={imgBaseURL + tvSerie.poster_path} alt=""/></span>
                 </div>
                 <div className={styles.second}>
                     <span>
-                        <img src={tvSerie.poster_path?imgBaseURL + tvSerie.poster_path:imgBaseURL+tvSerie.backdrop_path} alt=""/>
+                        <img
+                            src={tvSerie.poster_path ? imgBaseURL + tvSerie.poster_path : imgBaseURL + tvSerie.backdrop_path}
+                            alt=""/>
                         <div>
                             <div className={styles.title}>{tvSerie.original_name}</div>
                             <div className={styles.description}><p>{tvSerie.overview}</p></div>

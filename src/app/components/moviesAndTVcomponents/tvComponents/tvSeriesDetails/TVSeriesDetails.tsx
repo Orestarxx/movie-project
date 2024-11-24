@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import {tvService} from "@/app/services/tv.service";
-
-import { ITelevisionByID} from "@/app/models/ITelevisionByID";
+import {ITelevisionByID} from "@/app/models/ITelevisionByID";
 import styles from './tvSerieByID.module.css'
 import StarRatings from "@/app/components/starRatings/StarRatings";
 import {imgBaseURL, imgOriginal} from "@/app/urls/urls";
@@ -11,18 +10,19 @@ import {IVideoData} from "@/app/models/IVideoMovie";
 import VideoForDetailsMovieAndTV
     from "@/app/components/moviesAndTVcomponents/movieComponents/movieDetails/VideoForDetailsMovieAndTV/VideoForDetailsMovieAndTV";
 import {IDataImages} from "@/app/models/IImage";
-import FavoriteForTVAndMovies from "@/app/components/wishList/FavoriteForTVAndMovies";
-type SearchParams = Promise<{[key:string]:string}>
-type ParamsId = Promise<{id:string}>
+import FavoriteForTVAndMovies from "@/app/components/addToFavorite/FavoriteForTVAndMovies";
+
+type SearchParams = Promise<{ [key: string]: string }>
+type ParamsId = Promise<{ id: string }>
 type ParamsProps = {
-    params:ParamsId,
-    searchParams:SearchParams
+    params: ParamsId,
+    searchParams: SearchParams
 }
-const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
+const TvSeriesDetails: FC<ParamsProps> = async ({params}: ParamsProps) => {
     const {id} = await params;
-    const tvShow:ITelevisionByID = await tvService.singleTVSeries.getTVShowByID(id.toString())
-    const imagesOfTV:IDataImages = await  tvService.singleTVSeries.getImagesOfTV(id.toString())
-    const videos:IVideoData = await tvService.singleTVSeries.getVideosOfTV(id.toString())
+    const tvShow: ITelevisionByID = await tvService.singleTVSeries.getTVShowByID(id.toString())
+    const imagesOfTV: IDataImages = await tvService.singleTVSeries.getImagesOfTV(id.toString())
+    const videos: IVideoData = await tvService.singleTVSeries.getVideosOfTV(id.toString())
 
     return (
         <div id={styles.detailsTV}>
@@ -33,7 +33,7 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
                         <div id={styles.posterHolder}>
                             <img src={imgBaseURL + tvShow.poster_path} alt=""/>
                             <div id={styles.starsHolder}>
-                            <StarRatings rating={tvShow.vote_average}/>
+                                <StarRatings rating={tvShow.vote_average}/>
                                 <div id={styles.ratingCircle}>{tvShow.vote_average}</div>
                                 <div id={styles.release}>{tvShow.first_air_date}</div>
                             </div>
@@ -62,7 +62,7 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
                                 <div id={styles.genreName}><h2>Genres</h2></div>
                                 <div id={styles.genreHolder}>
                                     {tvShow.genres?.map((genre: IGenres, index: number) => <div key={index}
-                                                                                               className={styles.genre}>
+                                                                                                className={styles.genre}>
                                         <Link href={{
                                             pathname: '/tvGenres/' + genre.id,
                                             query: {page: 1}
@@ -90,7 +90,7 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
                         </div>
                     </div>
                     <div id={styles.videoHolder}>
-                             <FavoriteForTVAndMovies tv={tvShow}/>
+                        <FavoriteForTVAndMovies tv={tvShow}/>
                         <div id={styles.videoWrapper}>
                             <VideoForDetailsMovieAndTV videos={videos}/>
                         </div>
@@ -99,16 +99,16 @@ const TvSeriesDetails:FC<ParamsProps> =  async ({params}:ParamsProps) => {
                         {imagesOfTV.posters.length >= 4 &&
                             <div id={styles.postersHolder}>
                                 <div className={styles.image}>
-                                    <img src={imgBaseURL+imagesOfTV.posters[0].file_path} alt="poster"/>
+                                    <img src={imgBaseURL + imagesOfTV.posters[0].file_path} alt="poster"/>
                                 </div>
                                 <div className={styles.image}>
-                                    <img src={imgBaseURL+imagesOfTV.posters[1].file_path} alt="poster"/>
+                                    <img src={imgBaseURL + imagesOfTV.posters[1].file_path} alt="poster"/>
                                 </div>
                                 <div className={styles.image}>
-                                    <img src={imgBaseURL+imagesOfTV.posters[2].file_path} alt="poster"/>
+                                    <img src={imgBaseURL + imagesOfTV.posters[2].file_path} alt="poster"/>
                                 </div>
                                 <div className={styles.image}>
-                                    <img src={imgBaseURL+imagesOfTV.posters[3].file_path} alt="poster"/>
+                                    <img src={imgBaseURL + imagesOfTV.posters[3].file_path} alt="poster"/>
                                 </div>
                             </div>}
                     </div>

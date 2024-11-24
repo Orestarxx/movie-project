@@ -4,11 +4,12 @@ import styles from "@/app/components/moviesAndTVcomponents/movieComponents/movie
 import Genres from "@/app/components/genresComponents/movieGenresComponent/genres/Genres";
 import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/Movie";
 import {Pagination} from "@/app/components/pagination/Pagination";
-type SearchParams = Promise<{[key:string]:string}>
+
+type SearchParams = Promise<{ [key: string]: string }>
 type ParamsProps = {
     searchParams: SearchParams
 }
-const TopRated:FC<ParamsProps> = async ({searchParams}) => {
+const TopRated: FC<ParamsProps> = async ({searchParams}) => {
     const params = await searchParams;
     const topRated = await movieService.movies.getTopRated(params?.page.toString());
     console.log(topRated);

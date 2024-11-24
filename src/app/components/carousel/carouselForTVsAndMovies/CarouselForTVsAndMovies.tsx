@@ -1,22 +1,23 @@
 'use client'
 import React from 'react';
-import { useState } from 'react';
+import {useState} from 'react';
 import styles from './carouselForMoviesAndTVs.module.css';
 import {IMovie} from "@/app/models/IMovie";
 import {ITelevision} from "@/app/models/ITelevision";
 import {imgBaseURL} from "@/app/urls/urls";
 import Link from "next/link";
+
 type CarouselProps = {
-    array:IMovie[] | ITelevision[]
-    pathAndName:{path:string,name:string}
+    array: IMovie[] | ITelevision[]
+    pathAndName: { path: string, name: string }
 }
-const CarouselForFilms = ({array,pathAndName:{path,name,}}:CarouselProps) => {
-    const changedArray:(IMovie|ITelevision)[] = array.map(
-        (item:IMovie|ITelevision,index):IMovie|ITelevision =>({...item,position:index+1}));
+const CarouselForFilms = ({array, pathAndName: {path, name,}}: CarouselProps) => {
+    const changedArray: (IMovie | ITelevision)[] = array.map(
+        (item: IMovie | ITelevision, index): IMovie | ITelevision => ({...item, position: index + 1}));
     const slidesToShow = 4;
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const moveSlide = (direction:string) => {
+    const moveSlide = (direction: string) => {
         if (direction === 'next') {
             setCurrentIndex((prevIndex) => (prevIndex + slidesToShow) % changedArray.length);
         } else {

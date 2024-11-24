@@ -8,7 +8,8 @@ const FormForSearch = () => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     console.log(pathname);
-    const { replace } = useRouter();
+    const {replace} = useRouter();
+
     function searchMovie(term: string) {
         console.log(term);
         const params = new URLSearchParams(searchParams);
@@ -22,11 +23,12 @@ const FormForSearch = () => {
         }
         replace(`${pathname}?${params.toString()}`);
     }
+
     return (
         <Link href={
             {
                 pathname: pathname,
-                query:{page:1}
+                query: {page: 1}
             }
         }>
             <div id={styles.formHolder}>
@@ -46,7 +48,7 @@ const FormForSearch = () => {
                 </form>
 
             </div>
-         </Link>
+        </Link>
     );
 };
 

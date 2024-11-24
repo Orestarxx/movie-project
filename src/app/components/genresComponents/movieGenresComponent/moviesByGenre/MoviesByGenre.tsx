@@ -8,25 +8,27 @@ import Movie from "@/app/components/moviesAndTVcomponents/movieComponents/movie/
 import {IMovie} from "@/app/models/IMovie";
 
 
-type SearchParams = Promise<{[key:string]:string}>
-type ParamsId = Promise<{id:string}>
+type SearchParams = Promise<{ [key: string]: string }>
+type ParamsId = Promise<{ id: string }>
 type ParamsProps = {
     searchParams: SearchParams,
-    params:ParamsId
+    params: ParamsId
 }
-const MoviesByGenre:FC<ParamsProps> = async ({searchParams,params}) => {
-    const page =  await searchParams?? 1;
+const MoviesByGenre: FC<ParamsProps> = async ({searchParams, params}) => {
+    const page = await searchParams ?? 1;
     const {id} = await params;
-    const moviesByGenre = await movieService.movies.getAllMovies(page?.page?.toString(),query.with_genres+id);
+    const moviesByGenre = await movieService.movies.getAllMovies(page?.page?.toString(), query.with_genres + id);
     return (
         <div>
             <div id={styles.moviesAndGenresHolder}>
                 <div id={styles.genreHolder}>
                     <Genres id={id}/>
                 </div>
-                <div id={styles.movies}>{moviesByGenre.results?.map((byGenre:IMovie) =><Movie movie={byGenre} key={byGenre.id}/>)}</div>
+                <div id={styles.movies}>{moviesByGenre.results?.map((byGenre: IMovie) => <Movie movie={byGenre}
+                                                                                                key={byGenre.id}/>)}</div>
             </div>
-            <div id={styles.paginationHolder}><Pagination next={moviesByGenre.next} previous={moviesByGenre.previous}/></div>
+            <div id={styles.paginationHolder}><Pagination next={moviesByGenre.next} previous={moviesByGenre.previous}/>
+            </div>
         </div>
     );
 };
